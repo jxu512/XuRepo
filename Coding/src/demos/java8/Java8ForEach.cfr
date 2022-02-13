@@ -1,0 +1,55 @@
+/*
+ * Decompiled with CFR 0_131.
+ */
+package demos.java8;
+
+import demos.java8.MyConsumer;
+import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.function.Consumer;
+
+public class Java8ForEach {
+    public static void main(String[] args) {
+        ArrayList<Integer> myList = new ArrayList<Integer>();
+        int i2 = 0;
+        while (i2 < 10) {
+            myList.add(i2);
+            ++i2;
+        }
+        Iterator it = myList.iterator();
+        System.out.print("Iterator Value::");
+        while (it.hasNext()) {
+            Integer i3 = (Integer)it.next();
+            System.out.print(i3 + ",");
+        }
+        System.out.println();
+        System.out.print("Old foreach Value::");
+        for (Integer i3 : myList) {
+            System.out.print(i3 + ",");
+        }
+        System.out.println();
+        System.out.println();
+        System.out.print("Consumer anonymous class Value::");
+        myList.forEach(new Consumer<Integer>(){
+
+            @Override
+            public void accept(Integer t) {
+                System.out.print(t + ",");
+            }
+        });
+        System.out.println();
+        System.out.print("Consumer impl ");
+        MyConsumer action = new MyConsumer();
+        myList.forEach(action);
+        System.out.println();
+        System.out.print("Consumer impl Lambda Expression::");
+        Consumer<Integer> c = i -> System.out.print(i + ",");
+        myList.forEach(c);
+        System.out.println();
+        System.out.print("or with short notation:");
+        myList.forEach(i -> System.out.print(i + ","));
+        System.out.println();
+    }
+
+}
