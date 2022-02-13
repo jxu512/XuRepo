@@ -10,8 +10,9 @@ public class ParlindromeTable {
 		String input = args[0];
 		
 		ParlindromeTable p = new ParlindromeTable();
+		String parlindrome=p.search(args[0]);
 		System.out.println("Input: "+args[0]+":"+args[0].length());
-		System.out.println(p.search(args[0]));
+		System.out.println("Longest parlindrome: "+parlindrome);
 	}
 	/**
 	 * 
@@ -26,16 +27,16 @@ public class ParlindromeTable {
 		// Single char is parlindromic
 		for(int i=0;i<len;i++) table[i][i]=1;
 		// Two consective same char is parlindromic
-		printTable(table);
+		//printTable(table);
 		for(int i=0;i<len-1;i++) {
 			if (str.charAt(i)==str.charAt(i+1)) table[i][i+1]=1;
 		}
-		printTable(table);
+		//printTable(table);
 		// Three chars with same char at begin/end is parlindromic
 		for(int i=0;i<len-2;i++) {
 			if (str.charAt(i)==str.charAt(i+2)) table[i][i+2]=1;
 		}
-		printTable(table);
+		//printTable(table);
 
 		// Substrings longer than 3 chars
 		for(int cur_len=4;cur_len<=len;cur_len++) {		// current substring of length l
@@ -46,7 +47,19 @@ public class ParlindromeTable {
 		}
 		printTable(table);
 
-		return parlindrome;
+		// Return the longest parlindrome
+		int start=0,end=0,longest=1;
+		for (int i=0;i<len;i++) {
+			for (int j=i;j<len;j++) {
+				if (table[i][j]==1 && (j-i+1)>longest) {
+					start = i;
+					end=j;
+					longest=j-i+1;
+				}
+			}
+		}
+		
+		return str.substring(start, end+1);
 	}
 	/**
 	 * 
