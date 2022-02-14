@@ -1,6 +1,6 @@
 package demos.coding;
 
-public class ParlindromeTable {
+public class PalindromeTable {
 
 	/**
 	 * 
@@ -9,7 +9,7 @@ public class ParlindromeTable {
 	public static void main(String[] args) {
 		String input = args[0];
 		
-		ParlindromeTable p = new ParlindromeTable();
+		PalindromeTable p = new PalindromeTable();
 		String parlindrome=p.search(args[0]);
 		System.out.println("Input: "+args[0]+":"+args[0].length());
 		System.out.println("Longest parlindrome: "+parlindrome);
