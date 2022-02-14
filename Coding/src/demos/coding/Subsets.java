@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Subsets {
-    List<List<Integer>> result;
-	ArrayList<Integer> temp = new ArrayList<Integer>();
+    List<List<Character>> result;
+	ArrayList<Character> temp = new ArrayList<Character>();
     
     /**
      * 
      * @param args
      */
     public static void main(String[] args) {
-    	int[] numbers = { 1,2,3 };
+    	char[] numbers = { 'a','b','c' };
     	Subsets sub = new Subsets();
-    	List<List<Integer>> res = sub.getSubsets(numbers);
+    	List<List<Character>> res = sub.getSubs(numbers);
     	System.out.println(res);
     }
     /**
@@ -22,11 +22,11 @@ public class Subsets {
      * @param nums
      * @return
      */
-    public List<List<Integer>> getSubsets(int[] nums) {
-        result = new ArrayList<List<Integer>>();
+    public List<List<Character>> getSubs(char[] nums) {
+        result = new ArrayList<List<Character>>();
         if(nums==null || nums.length==0) return result;
         
-        subsets(nums, 0);
+        subs(nums, 0);
         return result;
     }
     /**
@@ -35,7 +35,7 @@ public class Subsets {
      * @param temp
      * @param index
      */
-    private void subsets(int[] nums, int index) {
+    private void subs(char[] nums, int index) {
         // base condition
         if(index >= nums.length) {
             result.add(new ArrayList<>(temp));
@@ -44,10 +44,10 @@ public class Subsets {
         
 		// case 1 : we pick the element
         temp.add(nums[index]);
-        subsets(nums, index+1); // move ahead
+        subs(nums, index+1); // move ahead
         temp.remove(temp.size()-1);
         
 		// case 2 : we don't pick the element
-        subsets(nums, index+1); // move ahead
+        subs(nums, index+1); // move ahead
     }
 }

@@ -7,7 +7,7 @@ public class Anagram {
 		
 		Anagram anagram = new Anagram();
 		boolean res = anagram.isAnagram(args[0], args[1]);
-		System.out.println(args[0]+" and "+args[1]+" are"+(res?"":"not")+" anagram");
+		System.out.println(args[0]+" and "+args[1]+" are"+(res?"":" not")+" anagram");
 	}
 	/**
 	 * 
@@ -19,14 +19,14 @@ public class Anagram {
 		if (s.length() != t.length()) {
 			return false;
 		}
-		int a[] = new int[26];
+		int count[] = new int[26];
 		for (int i = 0; i < s.length(); i++) {
-			a[s.charAt(i) - 'a']++;
-			a[t.charAt(i) - 'a']--;
+			count[s.charAt(i) - 'a']++;
+			count[t.charAt(i) - 'a']--;
 		}
 
-		for (int i = 0; i < a.length; i++) {
-			if (a[i] != 0) {
+		for (int i = 0; i < count.length; i++) {
+			if (count[i] != 0) {
 				return false;
 			}
 		}
