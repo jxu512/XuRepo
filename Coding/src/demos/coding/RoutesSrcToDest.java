@@ -52,7 +52,7 @@ public class RoutesSrcToDest {
 		direct.add(new Route('A','C'));
 		direct.add(new Route('C','A'));
 		direct.add(new Route('A','D'));
-		direct.add(new Route('D','B'));
+		direct.add(new Route('D','A'));
 		direct.add(new Route('B','C'));
 		direct.add(new Route('C','B'));
 		direct.add(new Route('B','D'));

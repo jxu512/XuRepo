@@ -42,12 +42,12 @@ public class Subsets {
             return;
         }
         
-		// case 1 : we pick the element
+		// pick the element
         temp.add(nums[index]);
-        subs(nums, index+1); // move ahead
+        subs(nums, index+1);
         temp.remove(temp.size()-1);
         
-		// case 2 : we don't pick the element
-        subs(nums, index+1); // move ahead
+		// don't pick the element
+        subs(nums, index+1);
     }
 }
