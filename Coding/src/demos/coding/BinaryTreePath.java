@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * List all paths for binary tree. Using backtracking.
+ * 
+ */
 /**
  * Definition for a binary tree node.
  * public class TreeNode {

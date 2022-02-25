@@ -1,5 +1,8 @@
 package demos.coding;
 
+/*
+ * Encode string by shifting chars k position
+ */
 public class CaesarCipher {
 
     public String encode(String s, int k) {
@@ -12,9 +15,8 @@ public class CaesarCipher {
              if(s.charAt(i)>='a' && s.charAt(i)<='z') {
                  ch += (k%26);
                  // Note: convert: (char) (*), have to use full parenthesis
-                 sb.append((char)(ch<='z'?ch:(ch-'z'+'a'-1)));	// Correct
-                 sb1.append((ch<='z'?ch:(ch-'z'+'a'-1)));		// Incorrect
-                 sb1.append(99);		// Incorrect
+                 sb.append((char)(ch<='z'?ch:(ch-'z'+'a'-1)));	// Correct, treat as char
+                 //sb1.append((ch<='z'?ch:(ch-'z'+'a'-1)));		// Incorrect, treated as integer
              }
              else if(s.charAt(i)>='A' && s.charAt(i)<='Z') {
                  ch += (k%26);

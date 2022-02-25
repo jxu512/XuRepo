@@ -1,6 +1,6 @@
 package demos.coding;
 
-class Solution {
+class MutatedArrayClosetToTarget {
     public int findBestValue(int[] arr, int target) {
         
         int maxElement = 0;

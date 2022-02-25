@@ -18,7 +18,7 @@ public class RepeatingPattern {
 		boolean found = false;
 		
 		// Possible repeating pattern of length i
-		for(int i=s.length()-1;i>1;i--) {
+		for(int i=s.length()-2;i>1;i--) {
 			
 			// Check substring of length i starting at index1
 			for(int index1=0; index1<s.length()-i;index1++) {

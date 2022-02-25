@@ -6,10 +6,10 @@ Details
 Runtime: 13 ms, faster than 87.22% of Java online submissions for Number of Dice Rolls With Target Sum.
 */
 public class DiceRollWithTargetSumBottomUp {
-    
+    long loops=0;
     public static void main(String[] args ) {
     	DiceRollWithTargetSumBottomUp roll = new DiceRollWithTargetSumBottomUp();
-    	roll.numRollsToTarget(4, 6, 7);
+    	roll.numRollsToTarget(3, 6, 15);
     }
 
     public int numRollsToTarget(int n, int k, int target) {
@@ -26,18 +26,19 @@ public class DiceRollWithTargetSumBottomUp {
         // Build matrix for number of dice from 2 to n
         for (int i = 2; i <= n; i++){
         	/*
-        	 For number of i dice, do target of j in i to target
+        	 For number of i dice, do target of j in i to min(target,i*k)
         	 */
-            for (int j = i; j <= target; j++){
+            for (int j = i; j <= Math.min(target,i*k); j++){
             	// For each (i dice, j target), 
             	// sum of (i-1, j-w) where w in 1...k
 	        	dp[i][j] = 0;
                 for (int w = 1; w <= Math.min(k, j); w++){
                     dp[i][j] = (dp[i][j] + dp[i-1][j-w]) % 1000000007;
+                    loops++;
                 }
             }
         }
-        printDP(dp);
+        //printDP(dp);
         return dp[n][target];
     }
     private void printDP(int[][] dp) {

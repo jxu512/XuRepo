@@ -10,7 +10,7 @@ package demos.coding;
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+class ReverseLinkedList {
     public ListNode reverseList(ListNode head) {
         
         if(head==null || head.next==null) return head;
