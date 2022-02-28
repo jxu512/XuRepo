@@ -2,12 +2,15 @@ package demos.coding;
 
 /*
  * Encode string by shifting chars k position
+ * char can be used in comparison
+ * char and int both have 2 bytes. When appending to StringBuilder need to convert to (char) to treat as char, 
+ * or it may be treated as int
  */
 public class CaesarCipher {
 
     public String encode(String s, int k) {
     // Write your code here
-        // Write your code here
+
         StringBuilder sb = new StringBuilder();
         StringBuilder sb1 = new StringBuilder();
         for(int i=0;i<s.length();i++){

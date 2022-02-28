@@ -39,9 +39,10 @@ public class PalindromeTable {
 		//printTable(table);
 
 		// Substrings longer than 3 chars
-		for(int cur_len=4;cur_len<=len;cur_len++) {		// current substring of length l
+		for(int cur_len=4;cur_len<=len;cur_len++) {		// current substring of length cur_len
 			for(int i=0;i<=len-cur_len;i++)	{			// checking (i, i+cur_len-1)
 				int j=i+cur_len-1;
+				// For (i, j) to be palindrome, (i+1,j-1) must be palindrome and (i)=(j)
 				if (table[i+1][j-1]==1 && str.charAt(i)==str.charAt(j)) table[i][j] = 1;
 			}
 		}

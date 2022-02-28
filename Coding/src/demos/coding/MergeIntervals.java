@@ -1,5 +1,10 @@
 package demos.coding;
 
+/*
+Given list of integer arrays [i, j]: inteval i for j, merge overlapping intervals
+Return new non overlapping intervals
+*/
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;

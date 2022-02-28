@@ -1,4 +1,9 @@
 package demos.coding;
+/*
+String is coded as "3[a]2[b2[x]3[y2[z]]]4[c]", where 3[a] represents aaa etc
+Return decoded string
+
+*/
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

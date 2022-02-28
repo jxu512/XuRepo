@@ -39,7 +39,6 @@ class Islands {
         int numOfIslands=0;
         for(int i=0;i<w;i++){
             for(int j=0;j<h;j++){
-                int[] arr={i,j};
                 if(grid[i][j]=='1') {
                     addToQueue(i,j,grid,queue);
                     if(findIsland(grid,queue)) numOfIslands ++;
@@ -52,13 +51,21 @@ class Islands {
     private boolean  findIsland(char[][] grid, Queue<int[]>queue) {
         
         while(!queue.isEmpty()) {
-            int[] arr1 = queue.remove();
+            int[] arr1 = queue.poll();
             int i=arr1[0];
             int j=arr1[1];
-            if(j-1>=0 && grid[i][j-1]=='1') addToQueue(i,j-1,grid,queue);
-            if(i-1>=0 && grid[i-1][j]=='1') addToQueue(i-1,j,grid,queue);
-            if(j+1<grid[0].length && grid[i][j+1]=='1') addToQueue(i,j+1,grid,queue);
-            if(i+1<grid.length && grid[i+1][j]=='1') addToQueue(i+1,j,grid,queue);
+            if(j-1>=0 && grid[i][j-1]=='1') {
+            	queue.offer(new int[] {i,j-1}); grid[i][j-1]='2';
+            }
+            if(i-1>=0 && grid[i-1][j]=='1') {
+            	queue.offer(new int[] {i-1,j}); grid[i-1][j]='2';
+            }
+            if(j+1<grid[0].length && grid[i][j+1]=='1') {
+            	queue.offer(new int[] {i,j+1}); grid[i][j+1]='2';
+            }
+            if(i+1<grid.length && grid[i+1][j]=='1') {
+            	queue.offer(new int[] {i+1,j}); grid[i+1][j]='2';
+            }
         }
         return true;
     }
@@ -71,7 +78,7 @@ class Islands {
     public static void main(String[] args) {
     	Islands islands = new Islands();
     	char[][] grid=  {
-    			{'1','1','1'},
+    			{'1','0','1'},
     			{'0','1','0'},
     			{'1','0','1'}
     	};

@@ -25,7 +25,7 @@ public class Palindrome {
 		// Possible parlindrome of length i
 		for (int i=len;i>1;i--) {
 			
-			// Check if substring starting at index1 is parlindrome
+			// Check if substring starting at index1 of length i is parlindrome
 			int index1=0, index2=0;
 			for ( index1=0;index1<=len-i;index1++) {
 				

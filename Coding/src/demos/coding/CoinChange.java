@@ -20,19 +20,19 @@ class CoinChange {
         Arrays.fill(matrix, amount+1);      // A number can't be reached
         matrix[0] = 0;                				// zero amount needs zero coin
         for(int coin:coins) if(coin<=amount) matrix[coin]=1;// Initialize, not required, recursion can take care of this as well
-        int num = findChanges(coins, amount, amount, matrix);
+        int num = findChangesTopdown(coins, amount, amount, matrix);
         // Integer.MAX_VALUE/Integer.MAX_VALUE-1 indicates not possible, return -1 per required
         return num>=amount?-1:num;
     }
     
-    private int findChanges(int[] coins, int amt, int amount, int[] matrix) {
+    private int findChangesTopdown(int[] coins, int amt, int amount, int[] matrix) {
 
         if(amt==0) return 0;
         if(matrix[amt]!=amount+1) return matrix[amt];
         
         for(int coin:coins) {
 	            if(amt>=coin) {
-		        	int found = findChanges(coins, amt-coin, amount, matrix);
+		        	int found = findChangesTopdown(coins, amt-coin, amount, matrix);
 		        	if( found!=amount )	matrix[amt] = Math.min(matrix[amt], found+1) ;
 		        	loops ++;
 	            }
@@ -42,25 +42,22 @@ class CoinChange {
         return matrix[amt];
     }
     public int coinChangeBottomup(int[] coins, int amount) {
-        //get size of dp array
         int max = amount + 1;
-        //declare dp
-        int[] dp = new int[max];
-        Arrays.fill(dp,max);
-        //declare dp[0] to be 0
-        dp[0] = 0;
+        int[] matrix = new int[max];
+        Arrays.fill(matrix, max);
+        matrix[0] = 0;			// Zero amount needs zero coin
         
-        //iterate over from 1 to amount  and j from 0 to coins length
+        //iterate over from 1 to amount and each coin
         loops=0;
         for (int amt = 1; amt <= amount; amt++) {
             for (int coin:coins) {
                 if(amt>=coin) {
-                    dp[amt] = Math.min(dp[amt], dp[amt - coin] + 1);
+                	matrix[amt] = Math.min(matrix[amt], matrix[amt-coin] + 1);
                 loops++;
                 }
             }
         }
-        return dp[amount] > amount ? -1 : dp[amount];
+        return matrix[amount] > amount ? -1 : matrix[amount];
 
     }
   

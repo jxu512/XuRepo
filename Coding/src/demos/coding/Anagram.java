@@ -1,5 +1,10 @@
 package demos.coding;
-
+/*
+ Check if two string are anagram
+ 
+ Similar approach can be used for find first unique char in string
+ 
+ */
 public class Anagram {
 
 	

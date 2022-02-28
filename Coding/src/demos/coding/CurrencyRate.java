@@ -1,7 +1,9 @@
 package demos.coding;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 // Main class
 public class CurrencyRate {
@@ -11,14 +13,15 @@ public class CurrencyRate {
 	List<String> temp=null;
 	
 	public CurrencyRate() {
-		
+		initRates();
+	}
+	public void findAllConversions() {
 		temp=new ArrayList<String>();
 		result=new ArrayList<List<String>>();
-		initRates();
 		temp.add("GBP");	// Start with GPB -> find AUD
 		findRateChain();
 		// 
-		System.out.println("All possible convertion for C to D:");
+		System.out.println("All possible convertion for GBP to AUD:");
 		result.forEach(route->System.out.println(route));
 	}
 	
@@ -57,15 +60,23 @@ public class CurrencyRate {
 		System.out.println("Input Rate:");
 		direct.forEach(Rate-> System.out.println(Rate));
 	}
-	
+	private float findRateBFS() {
+		
+		float rate = 0.0f; 
+		
+		Queue<Rate> queue = new LinkedList<Rate>();
+		List list = (List)queue;
+		list.
+		return rate;
+	}
 	/**
 	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		
-		CurrencyRate Rates = new CurrencyRate();
-		
+		CurrencyRate rates = new CurrencyRate();
+		rates.findAllConversions();
 	}
 
 	

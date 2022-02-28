@@ -1,5 +1,10 @@
 package demos.coding;
 
+/*
+n nodes with list of equally weighted edges between nodes. find shortest routes from 
+start node s to all other nodes.
+return list of integers of distances.
+*/
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -42,22 +47,21 @@ class ResultBFS {
     	processed.add(s);
     	int currentDepthCount=queue.size();
     	while (!queue.isEmpty()) {
-    		if(--currentDepthCount==0) depth++;
     		// Find next reachable nodes
-    		int current = queue.remove();
+    		int current = queue.poll();
     		currentDepthCount--;
     		for(int i=0;i<edges.size();i++) {
     			if(edges.get(i).contains(current)) {
     				int next = edges.get(i).get(0)!=current?edges.get(i).get(0):edges.get(i).get(1);
     				// Record next if not processed already
     				if(!processed.contains(next)) {
-	    				result.set(next-1, depth*unit);
-	    				queue.add(next);	// Add to queue
+	    				result.set(next-1, (depth+1)*unit);	// Depth for next is depth+1
+	    				queue.offer(next);	// Add to queue
 	    				processed.add(next);
     				}
     			}
     		}
-    		if(currentDepthCount==0) currentDepthCount=queue.size();
+    		if(--currentDepthCount==0) {depth++; currentDepthCount=queue.size(); }
     	}
     	result.remove(s-1);// Remove self
     	System.out.println(result);

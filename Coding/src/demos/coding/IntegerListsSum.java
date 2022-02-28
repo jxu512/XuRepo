@@ -36,6 +36,7 @@ public class IntegerListsSum {
         
         BigInteger num3 = num1.add(num2);
         String s = num3.toString();
+        // Convert cahr in string to int value
         ListNode result = new ListNode(s.charAt(0)-'0');
         current = result;
         for(int i=1;i<s.length();i++) {

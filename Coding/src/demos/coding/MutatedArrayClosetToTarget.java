@@ -1,12 +1,18 @@
 package demos.coding;
 
+/*
+Given positive integer array, and a target number x
+Find a number n, so that if we replace all numbers greater than n with n in array, 
+the sum of updated array is closest to x
+*/
+
 class MutatedArrayClosetToTarget {
     public int findBestValue(int[] arr, int target) {
         
         int maxElement = 0;
         int arrSum = 0;
         
-        // Find the max value and the upper bound of the seach range.
+        // Find the max value and the upper bound of the search range.
         for(int num : arr) {
             maxElement = maxElement<num?num:maxElement;
             arrSum += num;
@@ -24,7 +30,7 @@ class MutatedArrayClosetToTarget {
         int upperSum = getSum(arr, upper);
         
         
-        // Tyr binary search between lower and upper
+        // Do binary search between lower and upper
         while(Math.abs(lower - upper) != 1) {
             
             int middle = (lower + upper) / 2;

@@ -1,7 +1,9 @@
 package demos.coding;
 
 /* 
- Sample input
+Given, list of strings. It's GOOD SET if no string has another word as its prefix not itself is a prefix of another word
+
+Sample input
 7
 aab
 defgab  

@@ -15,7 +15,7 @@ public class IntersectArrays {
 		Arrays.sort(arr2);
 		
 		// Find intersect
-		int len1=arr1.length;
+		int len1 = arr1.length;
 		int len2 = arr2.length;
 		int i=0;
 		int k=0;

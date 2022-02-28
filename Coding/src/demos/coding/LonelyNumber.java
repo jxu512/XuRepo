@@ -1,5 +1,10 @@
 package demos.coding;
 
+/*
+Given a list of integers, all numbers are paired exept one
+Return the lonely number / unpaired number
+*/
+
 import static java.util.stream.Collectors.toList;
 
 import java.io.BufferedReader;

@@ -1,5 +1,11 @@
 package demos.coding;
 
+/*
+When numbers are with range, sya 1 to 1000, counting sort can be used
+int[] arr=int[1001], arr[num] increases for each num
+Result: add arr[num] of num 
+*/
+
 import java.io.*;
 import java.math.*;
 import java.security.*;

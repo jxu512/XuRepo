@@ -24,19 +24,19 @@ public class RoutesSrcToDest {
 	
 	//Find connecting route for C->D
 	private void findRoutes() {
-		
-		for(Route route:direct) {
 			Character current = temp.get(temp.size()-1);
+			// Add to result
+			if('D'==current) {
+				List<Character> matchRoute = new ArrayList(temp);
+				result.add(matchRoute);
+				return;
+			}
+
+		for(Route route:direct) {
 			if(current.equals(route.getSrc()) && !temp.contains(route.getDest())) {
 				temp.add(route.getDest());
-				if('D'!=route.getDest()) findRoutes();	// Dest not matching dest D
+				findRoutes();	// Dest not matching dest D
 				
-				// Add to result
-				if('D'==temp.get(temp.size()-1)) {
-					ArrayList<Character> matchRoute = new ArrayList();
-					matchRoute.addAll(temp);
-					result.add(matchRoute);
-				}
 				// Prepare for next
 				temp.remove(temp.size()-1);
 			}
