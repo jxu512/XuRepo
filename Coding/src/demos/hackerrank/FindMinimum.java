@@ -1,4 +1,10 @@
-package demos.interviews;
+package demos.hackerrank;
+
+/*
+List<Integer>
+Find all subsets of length m, for each subset, find minimum number, 
+then pick up maximum of the such minimum value.
+*/
 
 import java.io.*;
 import java.math.*;

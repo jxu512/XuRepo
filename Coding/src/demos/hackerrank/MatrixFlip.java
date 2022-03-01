@@ -1,4 +1,4 @@
-package demos.coding;
+package demos.hackerrank;
 
 /*
 	m[i][j] can be flipped with m[i][2*n-1-j], m[2*n-1-i][j], or m[2*n-1-i][2*n-1-j]

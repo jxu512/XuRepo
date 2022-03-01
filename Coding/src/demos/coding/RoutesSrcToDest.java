@@ -7,23 +7,23 @@ import java.util.List;
 public class RoutesSrcToDest {
 
 	List<Route> direct = null;
-	List<List<Character>> result=null;
-	List<Character> temp=null;
 	
 	public RoutesSrcToDest() {
 		
+		List<List<Character>> result=null;
+		List<Character> temp=null;
 		temp=new ArrayList<Character>();
 		result=new ArrayList<List<Character>>();
 		initRoutes();
 		temp.add('C');
-		findRoutes();
+		findRoutes(direct, result, temp);
 		// 
 		System.out.println("All possible routes from C to D::");
 		result.forEach(route->System.out.println(route));
 	}
 	
 	//Find connecting route for C->D
-	private void findRoutes() {
+	private void findRoutes(List<Route> direct, List<List<Character>> result, List<Character> temp) {
 			Character current = temp.get(temp.size()-1);
 			// Add to result
 			if('D'==current) {
@@ -35,7 +35,7 @@ public class RoutesSrcToDest {
 		for(Route route:direct) {
 			if(current.equals(route.getSrc()) && !temp.contains(route.getDest())) {
 				temp.add(route.getDest());
-				findRoutes();	// Dest not matching dest D
+				findRoutes(direct, result, temp);	// Dest not matching dest D
 				
 				// Prepare for next
 				temp.remove(temp.size()-1);
