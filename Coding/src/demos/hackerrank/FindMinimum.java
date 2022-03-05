@@ -42,16 +42,18 @@ class Result {
 
     private static void findSubset(List<Integer> arr, int index, List<List<Integer>> result, List<Integer> current,int m ) {
     	// subsets of length m
-        if(current.size()==m) {
-            System.out.println(current);
-            List<Integer> copy = new ArrayList<>(current);
-            result.add(new ArrayList<Integer>(current));
-            Collections.sort(copy);
-            int min = findMin(copy);
-            if(min>maxMin) maxMin = min;
-            return;
-        }
-    	if(index>=arr.size()) return;
+    	if(index>=arr.size()) {
+    		if(current.size()==m) {
+
+	            System.out.println(current);
+	            List<Integer> copy = new ArrayList<>(current);
+	            result.add(new ArrayList<Integer>(current));
+	            Collections.sort(copy);
+	            int min = findMin(copy);
+	            if(min>maxMin) maxMin = min;
+    		}
+	        return;
+    	}
     	// Print all subsets
     	//if(index>=arr.size()) { result.add(new ArrayList<Integer>(current)); return; }
     	
@@ -63,7 +65,7 @@ class Result {
 
 	private static int findMin(List<Integer> copy) {
 		int min = Integer.MAX_VALUE;
-		for(int i=0;i<copy.size()-2;i++) {
+		for(int i=0;i<copy.size()-1;i++) {
 			int diff =copy.get(i+1)-copy.get(i);
 			if(diff<min) min = diff;
 		}
