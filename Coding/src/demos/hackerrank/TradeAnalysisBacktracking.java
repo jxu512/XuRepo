@@ -3,7 +3,7 @@ package demos.hackerrank;
 import java.io.*;
 import java.util.*;
 
-public class TradeAnalysis {
+public class TradeAnalysisBacktracking {
     long sum = 0;
     List<List<Integer>> sets = new ArrayList<List<Integer>>();
     
@@ -17,7 +17,7 @@ public class TradeAnalysis {
             int[] arr = new int[str.length];
             for(int i=0;i<str.length;i++) arr[i]=Integer.parseInt(str[i]);
             List<Integer> temp=new ArrayList<Integer>();
-            TradeAnalysis sol = new TradeAnalysis();
+            TradeAnalysisBacktracking sol = new TradeAnalysisBacktracking();
             sol.calcSum(arr, 0,temp);
             System.out.println(sol.sum);
             System.out.println(sol.sets);
