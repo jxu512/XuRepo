@@ -5,7 +5,7 @@ import java.util.*;
 
 public class TradeAnalysisBacktracking {
     long sum = 0;
-    List<List<Integer>> sets = new ArrayList<List<Integer>>();
+    //List<List<Integer>> sets = new ArrayList<List<Integer>>();
     
     public static void main(String[] args) {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
@@ -20,7 +20,7 @@ public class TradeAnalysisBacktracking {
             TradeAnalysisBacktracking sol = new TradeAnalysisBacktracking();
             sol.calcSum(arr, 0,temp);
             System.out.println(sol.sum);
-            System.out.println(sol.sets);
+            //System.out.println(sol.sets);
         }
         catch(Exception e){
             e.printStackTrace();
@@ -31,7 +31,7 @@ public class TradeAnalysisBacktracking {
         
         if(i>=arr.length) {
         	sum = (sum+ curVal(temp))%1000000007;
-        	sets.add(new ArrayList(temp));
+        	//sets.add(new ArrayList(temp));
         	return;
         }
         temp.add(arr[i]);

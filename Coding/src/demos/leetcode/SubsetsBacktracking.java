@@ -12,7 +12,7 @@ public class SubsetsBacktracking {
      * @param args
      */
     public static void main(String[] args) {
-    	char[] arr = { 'a','b','c' };
+    	char[] arr = { 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u' };
     	SubsetsBacktracking sub = new SubsetsBacktracking();
     	List<List<Character>> res = sub.getSubs(arr);
     	System.out.println(res);
@@ -38,7 +38,7 @@ public class SubsetsBacktracking {
     private void subs(char[] nums, int index) {
         // End condition: each iteration must have processed all elements
         if(index >= nums.length) {		// This condition gives all subsets
-        	//if(temp.size()==2)		// This condition gives subsets of fixed size only
+        	if(temp.size()==3)		// This condition gives subsets of fixed size only
         		result.add(new ArrayList<>(temp));	// Create new object from temp
             return;
         }

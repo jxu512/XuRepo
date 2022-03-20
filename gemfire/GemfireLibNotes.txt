@@ -1,0 +1,8 @@
+1. package / zip file can be downloaded from Pivotal
+2. To support maven
+    Upload below JAR and its maven meta data POM
+    geode-core-9.10.2.jar
+    geode-common-9.10.2.jar
+    geode-management-9.10.2.jar
+    geode-all-bom-9.10.2.pom
+    
