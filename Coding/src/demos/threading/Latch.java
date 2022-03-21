@@ -30,6 +30,8 @@ class Runnable4 implements Runnable {
 	public void run() {
 
 		  	try {
+				latch.await();		// First await blocks
+				latch.await();		// Subsequent await does returns right away, i.e., CountDownLatch can't be reused
 				latch.await();
 				System.out.format("%d,", order);
 			} catch (Exception e) {
