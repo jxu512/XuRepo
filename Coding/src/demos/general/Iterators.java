@@ -24,12 +24,13 @@ public final class Iterators {
 		System.out.println("Iterator can't be used if collection is structurely modified");
 		Iterator<String> it = list.iterator();
 		//list.add("b");
-		//it.next();it.remove();
+		//it.next();it.remove();		// Iterator allows removal of last returned element
 		
 		System.out.println("Two implicit iterators: (clean)");
 		List<String> ul = Collections.unmodifiableList(list);
 		for(String s1:ul) {
 			for(String s2:ul) System.out.print("("+s1+","+s2+")");
+			// list.remove(0);		// Can't remove due to implicit iterator
 			System.out.println();
 		}
 		// or
@@ -37,6 +38,7 @@ public final class Iterators {
 		Iterator<String> it1 = list.iterator();
 		while(it1.hasNext()) {
 			String s1=it1.next();
+			// list.add("X");	//Iterator can't be used if collection is structurely modified
 			Iterator<String> it2 = list.iterator();
 			while(it2.hasNext()) System.out.print("("+s1+","+it2.next()+")");
 			System.out.println();
@@ -64,7 +66,7 @@ public final class Iterators {
 		spliterator1.forEachRemaining((s)->System.out.print(s));
 		System.out.println();
 		System.out.print("Spliterator 2: ");
-		spliterator2.forEachRemaining(System.out::print);
+		while(spliterator2.tryAdvance(System.out::print));
 		
 		System.out.println();
 	}
