@@ -7,10 +7,11 @@ public class PhaserTest {
 	public static void main(String[] args) {
 		
 		Runnable5[] r = new Runnable5[10];
-		// onAdvance() determines if Phaser will move to next phaser, default returns true which means only one phase
+		// onAdvance() determines if Phaser will move to next phase, 
+		// default returns true which means only one phase, which means call of arriveAndAwaitAdvance() returns right away
 		final Phaser phaser = new Phaser() {
 		     protected boolean onAdvance(int phase, int registeredParties) {
-		    	 System.out.println();
+		    	 if(phase>0) System.out.println("--phase "+phase);
 		       return false;
 		     }
 		   };
@@ -34,7 +35,7 @@ class Runnable5 implements Runnable {
 		this.order=order;
 		this.total=total;
 		this.phaser=phaser;
-		phaser.register();		// Registration should not from running thread
+		phaser.register();		// Registration should not be from running thread
 	}
 	@Override
 	public void run() {

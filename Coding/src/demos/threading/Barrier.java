@@ -1,6 +1,5 @@
 package demos.threading;
 
-import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 public class Barrier {
@@ -8,9 +7,9 @@ public class Barrier {
 	public static void main(String[] args) {
 		
 		Runnable1[] r = new Runnable1[10];
-		CyclicBarrier latch = new CyclicBarrier(r.length, ()->System.out.println() );
+		CyclicBarrier barrier = new CyclicBarrier(r.length, ()->System.out.println() );
 		for(int i=0;i<r.length;i++) {
-			r[i]=new Runnable1(i,r.length, latch);
+			r[i]=new Runnable1(i,r.length, barrier);
 			new Thread(r[i]).start();
 		}
 	}
@@ -20,11 +19,11 @@ class Runnable1 implements Runnable {
 
 	int order=-1;
 	int total=0;
-	CyclicBarrier latch=null;
+	CyclicBarrier barrier=null;
 	public Runnable1(int order, int total, CyclicBarrier latch) {
 		this.order=order;
 		this.total=total;
-		this.latch=latch;
+		this.barrier=latch;
 	}
 	@Override
 	public void run() {
@@ -33,7 +32,7 @@ class Runnable1 implements Runnable {
 		for(int i=0;i<1000;i++) {
 		
 		  	try {
-				l=latch.await();
+				l=barrier.await();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

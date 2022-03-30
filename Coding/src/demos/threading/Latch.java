@@ -31,7 +31,7 @@ class Runnable4 implements Runnable {
 
 		  	try {
 				latch.await();		// First await blocks
-				latch.await();		// Subsequent await does returns right away, i.e., CountDownLatch can't be reused
+				latch.await();		// Subsequent await returns right away, i.e., CountDownLatch can't be reused
 				latch.await();
 				System.out.format("%d,", order);
 			} catch (Exception e) {

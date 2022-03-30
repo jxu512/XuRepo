@@ -9,12 +9,12 @@ public class LargestTriangle {
 		LargestTriangle tri =new LargestTriangle();
 		int[][] arr = 
 			{
-				{3,5},
+				{9,5},
 				{6,15},
 				{2,12},
 				{3,9},
 				{7,18},
-				{5,11},
+				{20,11},
 				{8,15},
 				{13,2}
 			};
@@ -33,7 +33,7 @@ public class LargestTriangle {
 					int x1=arr[i1][0], y1=arr[i1][1];
 					int x2=arr[i2][0], y2=arr[i2][1];
 					int x3=arr[i3][0], y3=arr[i3][1];
-					double a=0.5*Math.sqrt((x2-x1)*(y3-y1)-(x3-x1)*(y2-y1));
+					double a=0.5*Math.abs((x2-x1)*(y3-y1)-(x3-x1)*(y2-y1));
 					area=a>area?a:area;
 				}
 			}

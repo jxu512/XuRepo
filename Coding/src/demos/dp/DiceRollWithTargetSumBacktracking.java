@@ -1,4 +1,4 @@
-package demos.coding;
+package demos.dp;
 
 import java.util.ArrayList;
 import java.util.List;
