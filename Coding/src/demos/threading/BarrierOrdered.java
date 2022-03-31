@@ -1,6 +1,5 @@
 package demos.threading;
 
-import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 public class BarrierOrdered {

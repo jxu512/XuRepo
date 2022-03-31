@@ -1,4 +1,4 @@
-package demos.coding;
+package demos.dp;
 
 import java.io.*;
 import java.math.*;
