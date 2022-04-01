@@ -47,7 +47,6 @@ public class SubsetsBacktracking {
         temp.add(nums[index]);
         subs(nums, index+1);
         temp.remove(temp.size()-1);
-        
 		// don't pick the element
         subs(nums, index+1);
     }

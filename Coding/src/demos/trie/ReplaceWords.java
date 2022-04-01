@@ -8,7 +8,7 @@ Sample:
 ["a", "aa", "aaa", "aaaa"]
 "a aa a aaaa aaa aaa aaa aaaaaa bbb baba ababa"
 */
-package demos.general;
+package demos.trie;
 
 import java.util.Arrays;
 import java.util.List;
