@@ -1,7 +1,7 @@
 /*
 
 */
-package demos.hackerrank;
+package demos.listIterator;
 
 import java.util.LinkedList;
 import java.util.List;

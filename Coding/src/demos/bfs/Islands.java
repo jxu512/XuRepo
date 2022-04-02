@@ -1,4 +1,4 @@
-package demos.coding;
+package demos.bfs;
 
 /*
 Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.
@@ -41,14 +41,15 @@ class Islands {
             for(int j=0;j<h;j++){
                 if(grid[i][j]=='1') {
                     addToQueue(i,j,grid,queue);
-                    if(findIsland(grid,queue)) numOfIslands ++;
+                    findIsland(grid,queue);
+                    numOfIslands ++;
                 }
             }
         }
         return numOfIslands;
     }
     
-    private boolean  findIsland(char[][] grid, Queue<int[]>queue) {
+    private int findIsland(char[][] grid, Queue<int[]>queue) {
         
         while(!queue.isEmpty()) {
             int[] arr1 = queue.poll();
@@ -67,7 +68,7 @@ class Islands {
             	queue.offer(new int[] {i+1,j}); grid[i+1][j]='2';
             }
         }
-        return true;
+        return 1;
     }
     private void addToQueue(int i,int j,char[][] grid, Queue<int[]> queue) {
         int arr[]={i,j};

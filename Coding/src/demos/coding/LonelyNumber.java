@@ -1,7 +1,7 @@
 package demos.coding;
 
 /*
-Given a list of integers, all numbers are paired exept one
+Given a list of integers, all numbers are paired except one
 Return the lonely number / unpaired number
 */
 

@@ -6,7 +6,7 @@ Find a number n, so that if we replace all numbers greater than n with n in arra
 the sum of updated array is closest to x
 */
 
-class MutatedArrayClosetToTarget {
+class MutatedArrayClosestToTarget {
     public int findBestValue(int[] arr, int target) {
         
         int maxElement = 0;

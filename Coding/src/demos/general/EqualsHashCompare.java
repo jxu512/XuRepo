@@ -23,11 +23,13 @@ public class EqualsHashCompare {
 		// HashSet
 		set1.add(e1);	//OK
 		set1.add(e2);	//OK but not desired, because both e1 and e2 are in set
+						//because default equals on Object treats each object different
+		System.out.println(set1);
 		// TreeSet
 		try {
 		set2.add(e1);	// Error because TreeSet requires sort/ comparable
 		}
-		catch(Exception e) { e.printStackTrace();}
+		catch(Exception e) { System.out.println("Error...");}
 	}
 	public void test2() {
 		Set<Entry2> set1 = new HashSet<>();
@@ -42,6 +44,7 @@ public class EqualsHashCompare {
 		set1.add(e2);	//OK but e2 ignored in set because e2==e1 according to equeals function
 		set1.add(e3);	//OK and e3 added to set
 		set1.add(e4);	//OK and e4 added to set
+		System.out.println(set1);
 		// TreeSet
 		set2.add(e1);	// OK because Entry2 implements Comparable
 		set2.add(e2);	// OK but e2 ignored in set because e2==e1 according to equeals function
@@ -49,6 +52,7 @@ public class EqualsHashCompare {
 						//if comparesTo compares only ID, e3 will be ignored since it would be equal to e1/e2 
 						//according to compareTo
 		set2.add(e4);	//OK and e4 added to set
+		System.out.println(set2);
 	}
 
 }
