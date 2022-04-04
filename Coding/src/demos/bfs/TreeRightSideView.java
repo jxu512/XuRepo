@@ -1,5 +1,6 @@
 /*
 https://leetcode.com/problems/binary-tree-right-side-view/
+BFS
 */
 package demos.bfs;
 

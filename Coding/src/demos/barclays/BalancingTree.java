@@ -74,13 +74,3 @@ public class BalancingTree {
 		return n6;
 	}
 }
-
-class Node{
-	int val;
-	Node left;
-	Node right;
-	
-	public Node(int v) {
-		val=v;
-	}
-}
