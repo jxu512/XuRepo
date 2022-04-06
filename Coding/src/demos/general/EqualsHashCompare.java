@@ -41,7 +41,7 @@ public class EqualsHashCompare {
 		
 		// HashSet
 		set1.add(e1);	//OK
-		set1.add(e2);	//OK but e2 ignored in set because e2==e1 according to equeals function
+		set1.add(e2);	//OK but e2 ignored in set because e2==e1 according to equals function
 		set1.add(e3);	//OK and e3 added to set
 		set1.add(e4);	//OK and e4 added to set
 		System.out.println(set1);

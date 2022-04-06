@@ -1,0 +1,6 @@
+From command line:
+1. mvn package
+2. java -jar target\demo-springboot-1.0-SNAPSHOT.jar
+
+From eclipse
+Run demo.sprintboot.SpringBootConsoleApplication
