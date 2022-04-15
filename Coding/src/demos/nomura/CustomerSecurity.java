@@ -76,12 +76,13 @@ class CustSecurity{
 		return cust+"-"+security;
 	}
 	// To use CustSecurity as hask key, must override equals and hashCode
-	@Override
+	// If equals not overriden, every entry is treated as a distinct object per Object.equals()
+	//*@Override
 	public boolean equals(Object o) {
 		if(o==null || ! (o instanceof CustSecurity)) return false;
 		CustSecurity co = (CustSecurity)o;
 		return cust.equals(co.cust) && security.equals(co.security);
-	}
+	}//*/
 	@Override
 	public int hashCode() {
 		return cust.hashCode()+security.hashCode();
