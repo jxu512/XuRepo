@@ -9,7 +9,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 
-public class First {
+public class GsonTestwithModules {
 	public static void main(String[] args) {
 		
 		GsonBuilder builder = new GsonBuilder(); 
