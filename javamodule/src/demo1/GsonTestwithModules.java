@@ -13,10 +13,11 @@ public class GsonTestwithModules {
 	public static void main(String[] args) {
 		
 		GsonBuilder builder = new GsonBuilder(); 
-		builder.registerTypeAdapter(Employee.class, new EmployeeAdapter()); 
+		// If no adapter provided, default reflection base adapter is used, which doesn't work in Java 9 and above
+		//builder.registerTypeAdapter(Employee.class, new EmployeeAdapter()); // option 2: use customer adapter instead of reflection base
 		Gson gson = builder.create(); 		
 		Employee e = new Employee(1,"Jeff","citi", "JC");
-		EmployeeAdapter adapter = new EmployeeAdapter();
+
 		System.out.println(gson.toJson(e, Employee.class));
 		
 		String json = "{\"id\":1,\"name\":\"Jeff\",\"company\":\"Barclays\",\"location\":\"NJ\"}";
