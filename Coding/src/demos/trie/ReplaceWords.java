@@ -48,7 +48,7 @@ public class ReplaceWords {
     }
     private String searchTrie(String w, Trie root){
         	Trie cur=root;
-           char[] ch=w.toCharArray();
+            char[] ch=w.toCharArray();
             for(char c:ch) {
                 if(cur.child[c-'a']!=null) {
                 	cur=cur.child[c-'a'];
