@@ -78,6 +78,17 @@ function opChange(value) {
 		num2.value="";
 	}
 }
+
+function getFoodCourt() {
+	const xmlHttp = new XMLHttpRequest();
+	 url = "https://jsonmock.hackerrank.com/api/food_outlets?city=Seattle&page=1";
+	xmlHttp.onload = function() {
+		document.getElementById("court").value=this.responseText;
+	}
+	
+	xmlHttp.open("GET",url);
+	xmlHttp.send();
+}
 </script>
 </head>
 
@@ -98,5 +109,9 @@ Number 2: <input type=text id=num2 placeholder="Number 2" onchange=validateNumbe
 Result: <input type=text id=result placeholder="Result" readonly=true></input><br>
 <button id=addBtn disabled=true onclick=addNum()>Calculate</button><br>
 
+<br><hr><br>
+
+<button id=testAjax onclick=getFoodCourt()>Get Food Court</button><br><br>
+<textarea id=court readonly=true rows=20 cols=100></textarea>
 </body>
 </html>
