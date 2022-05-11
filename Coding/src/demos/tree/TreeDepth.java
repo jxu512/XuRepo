@@ -2,9 +2,9 @@ package demos.tree;
 
 public class TreeDepth {
 
-    public int maxDepth(TreeNode root) {
+    public int maxDepth(TreeNode node) {
         
-        if(root==null) return 0;
-        return Math.max(maxDepth(root.left),maxDepth(root.right))+1;
+        if(node==null) return 0;
+        return Math.max(maxDepth(node.left),maxDepth(node.right))+1;
     }
 }

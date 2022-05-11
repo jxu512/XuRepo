@@ -20,7 +20,7 @@ public final class Iterators {
 	}
 	
 	private void testIterator() {
-		// Once an iterator, if the collection is structurely modified, iterator will throw ConcurrentModificationException
+		// Once an iterator is created, if the collection is structurally modified, iterator will throw ConcurrentModificationException
 		System.out.println("Iterator can't be used if collection is structurely modified");
 		Iterator<String> it = list.iterator();
 		//list.add("b");
@@ -38,7 +38,7 @@ public final class Iterators {
 		Iterator<String> it1 = list.iterator();
 		while(it1.hasNext()) {
 			String s1=it1.next();
-			// list.add("X");	//Iterator can't be used if collection is structurely modified
+			// list.add("X");	//Iterator can't be used if collection is structurally modified
 			Iterator<String> it2 = list.iterator();
 			while(it2.hasNext()) System.out.print("("+s1+","+it2.next()+")");
 			System.out.println();

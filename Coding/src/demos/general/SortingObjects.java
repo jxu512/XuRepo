@@ -15,7 +15,13 @@ public class SortingObjects {
 		MyEntry[] entries = new MyEntry[10];
 		for(int i=0;i<entries.length;i++) entries[i]=new MyEntry(i,String.valueOf(i));
 		// Below will fail without MyEntry implementing Comparable
-		Arrays.sort(entries);
+		try { Arrays.sort(entries); }
+		catch(Exception e) {}
+		// Can provide Comparator
+		Arrays.sort(entries, (e1,e2)-> {
+				return e1.id-e2.id;
+			}
+		);
 		
 		// Always OK
 		Set<MyEntry> set = new HashSet<MyEntry>();
@@ -27,7 +33,7 @@ public class SortingObjects {
 
 }
 
-class MyEntry implements Comparable<MyEntry> 	// Sorting related operations fail with out implementing Comparable because there is no default Comparable implementation
+class MyEntry //implements Comparable<MyEntry> 	// Sorting related operations fail with out implementing Comparable because there is no default Comparable implementation
 {
 	int id;
 	String type;
@@ -44,9 +50,9 @@ class MyEntry implements Comparable<MyEntry> 	// Sorting related operations fail
 	public String toString() {
 		return id+"/"+type;
 	}
-	@Override
-	public int compareTo(MyEntry o) {
-		return id-o.id;
-	}
+	//@Override
+	//public int compareTo(MyEntry o) {
+	//	return id-o.id;
+	//}
 
 }

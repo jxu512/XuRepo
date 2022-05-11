@@ -1,19 +1,22 @@
 /*
 https://leetcode.com/problems/balanced-binary-tree/
+
+Determine if a brinary tree is balanced.
 */
 package demos.leetcode;
 
 public class BalancedBinaryTree {
     public boolean isBalanced(TreeNode root) {
-        return dfsHeight(root) != -1;
+        return balancedHeight(root) != -1;
     }
-    int dfsHeight(TreeNode root){
-        if(root==null) return 0;
+    
+    int balancedHeight(TreeNode node) {
+        if(node==null) return 0;
 
-        int left=dfsHeight(root.left);
+        int left=balancedHeight(node.left);
         if(left==-1) return -1;
 
-        int right=dfsHeight(root.right);
+        int right=balancedHeight(node.right);
         if(right==-1) return -1;
         
         // Use special value -1 to unwind recursion
