@@ -1,0 +1,16 @@
+<div class=calculator>
+<h1>Angular Calculator</h1>
+Number 1: <input #input1 id=input1 type=text placeholder="Number 1" [value]="num1" (change)="onchange1(input1.value)" /><br>
+Operation: 
+<select #operation (change)=opChange(operation.value) >
+	<option value="+">Add</option>
+	<option value="-">Subtract</option>
+	<option value="*">Multiply</option>
+	<option value="/">Divide</option>
+	<option value="**2">Power of 2</option>
+	<option value="**">Power of</option>
+	<option value="sqrt">Square root</option>
+</select><br>
+Number 2: <input #input2 id=input2 type=text placeholder="Number 2" [value]=num2  (change)="onchange2(input2.value)" /><br>
+Result: <input type=text id=result placeholder="Result" readonly=true value={{result}}/><br>
+<button id=addBtn (click)=calculate(operation.value)>Calculate</button><br>
