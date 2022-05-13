@@ -12,5 +12,6 @@ Operation:
 	<option value="sqrt">Square root</option>
 </select><br>
 Number 2: <input #input2 id=input2 type=text placeholder="Number 2" [value]=num2  (change)="onchange2(input2.value)" /><br>
-Result: <input type=text id=result placeholder="Result" readonly=true value={{result}}/><br>
+Result: <input type=text id=result placeholder="Result" readonly=true value={{result}}/><br><br>
+
 <button id=addBtn (click)=calculate(operation.value)>Calculate</button><br>

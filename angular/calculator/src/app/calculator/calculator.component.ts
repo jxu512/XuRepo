@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule,ReactiveFormsModule   } from '@angular/forms';
+imports: [
+         FormsModule, ReactiveFormsModule
+      ]
+      
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
@@ -15,6 +17,7 @@ export class CalculatorComponent implements OnInit {
   }
    num1: number=5;
    num2: number=4;
+   num2Str: string="";
    result: number=0;
   
   calculate(op: string){
