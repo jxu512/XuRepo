@@ -31,6 +31,12 @@ export class CalculatorComponent implements OnInit {
 	return this.num2=Number(text);
   }
   opChange(op: string) {
+	if(!this.num2Str) {
+		alert ("Please input number 2!");
+		(<HTMLInputElement>document.getElementById("input2")).focus();
+		return;
+	}
+	this.num2=Number(this.num2Str);
 	switch (op) {
 		case "+":
 			this.result = this.num1+this.num2;
