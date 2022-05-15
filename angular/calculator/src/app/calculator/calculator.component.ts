@@ -8,7 +8,20 @@ import { FormsModule,ReactiveFormsModule   } from '@angular/forms';
 })
 export class CalculatorComponent implements OnInit {
 
-  constructor() { }
+  operations: string[][];
+  constructor() {
+	
+	
+	this.operations = [
+		["+","Add"],
+		["-","Subtract"],
+		["*","Multiply"],
+		["/","Divide"],
+		["**2","Power of 2"],
+		["**","Power of"],
+		["sqrt","Square root"]
+	];
+}
 
   ngOnInit(): void {
   }
@@ -16,7 +29,7 @@ export class CalculatorComponent implements OnInit {
    num2: number=4;
    num2Str: string="";
    result: number=0;
-  
+     
   calculate(op: string){
 	
 	this.opChange(op);
