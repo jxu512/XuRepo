@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { HttpXhrBackend } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Component({
@@ -13,7 +14,7 @@ import { Injectable } from '@angular/core';
 export class FoodcourtComponent implements OnInit {
 
   response: string="";
-  constructor(private http: HttpClient) { }
+  constructor(private httpInjected: HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -30,9 +31,22 @@ export class FoodcourtComponent implements OnInit {
 
   }
   // Angular http
-  getFoodCourtHttp() {https://stackoverflow.com/questions/5612787/converting-an-object-to-a-string
+  getFoodCourtHttp() {
 	
-  this.http.get("https://jsonmock.hackerrank.com/api/food_outlets?city=Seattle&page=2")
+	const httpClient = new HttpClient(new HttpXhrBackend({ 
+    	build: () => new XMLHttpRequest() 
+		}));
+    httpClient.get("https://jsonmock.hackerrank.com/api/food_outlets?city=Seattle&page=3")
+    	.subscribe((responseBody) => {
+		(<HTMLInputElement>document.getElementById("court")).value=JSON.stringify(responseBody);
+    });
+
+  }
+
+  // Angular http via Injection
+  getFoodCourtHttpInject() {
+	
+    this.httpInjected.get("https://jsonmock.hackerrank.com/api/food_outlets?city=Seattle&page=2")
     	.subscribe((responseBody) => {
 		(<HTMLInputElement>document.getElementById("court")).value=JSON.stringify(responseBody);
     });

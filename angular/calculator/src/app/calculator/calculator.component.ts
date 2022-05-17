@@ -78,6 +78,7 @@ export class CalculatorComponent implements OnInit {
 			break;
 	}
 	
+	this.result=Math.round(this.result*100)/100;
 	return this.result;
 
   }
