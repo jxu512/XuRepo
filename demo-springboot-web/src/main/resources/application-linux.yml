@@ -4,4 +4,7 @@ server:
 logging:
   level:
     org.springframework: INFO
+    
+log.path: "/opt/tomcat9/logs"
+
 management.endpoints.web.exposure.include: "*"

@@ -32,6 +32,7 @@
 
 	
     <build>
+    	<finalName>spring-boot-demo</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

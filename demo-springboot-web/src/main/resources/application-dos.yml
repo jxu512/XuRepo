@@ -4,4 +4,7 @@ server:
 logging:
   level:
     org.springframework: INFO
+    
+log.path: "g:/logs"
+  
 management.endpoints.web.exposure.include: "*"
