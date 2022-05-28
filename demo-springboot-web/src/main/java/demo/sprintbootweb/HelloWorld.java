@@ -13,7 +13,7 @@ public class HelloWorld {
 
 	@GetMapping("/hello")
 	public String sayHello(@RequestParam String name) {
-		String msg = "Hello "+name+"!";
+		String msg = "{ Hello: "+name+" }";
 		log.info(name);
 		return msg;	
 	}

@@ -14,6 +14,7 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class BasicStream {
@@ -29,16 +30,70 @@ public class BasicStream {
 		s.partitionBy();
 		s.toCollectionListMapAndSet();
 		s.toMap();
+		s.streamIsLazyAndNotReusable();
+		s.parallel();
 		//s.streamOf();
 	}
-	public void filterMapAggregate() {
+	private void filterMapAggregate() {
 		int sum = entries.stream()
 				.filter(e->e.id%2==1)
 				.mapToInt(e->e.id)
 				.sum();
 		System.out.format("Fileter/map/Sum is %d\n", sum);
 	}
-	public void streamOf() {
+	private void parallel() {
+		
+		int sum=0;
+		long t1, t2;
+		int len = 1_000_000_000;
+		Integer[] array = new Integer[len];
+		Arrays.fill(array, 1);
+		List<Integer> list = Arrays.asList(array);
+		//for(int i=0;i<len;i++) list.add(i);
+		IntStream intSt;
+		
+		System.out.println("Loop vs Sequential vs Parallel");
+		
+		try { Thread.sleep(10*1000);}
+		catch(InterruptedException e) {}
+		intSt = list.stream().mapToInt(Integer::intValue);
+		t1 = System.currentTimeMillis();
+		for(int num:list) sum += num;
+		t2 = System.currentTimeMillis();
+		System.out.format("Loop time: %d\n",(t2-t1));
+		try { Thread.sleep(10*1000);}
+		catch(InterruptedException e) {}
+		
+		intSt = list.stream().mapToInt(Integer::intValue);
+		t1 = System.currentTimeMillis();
+		sum = intSt.sum();
+		t2 = System.currentTimeMillis();
+		System.out.format("Sequential time: %d\n",(t2-t1));
+		try { Thread.sleep(10*1000);}
+		catch(InterruptedException e) {}
+		
+		intSt = list.parallelStream().mapToInt(Integer::intValue);
+		t1 = System.currentTimeMillis();
+		sum = intSt.sum();
+		t2 = System.currentTimeMillis();
+		System.out.format("Parallel time: %d\n",(t2-t1));
+
+	}
+	private void streamIsLazyAndNotReusable() {
+		List<Integer> list = new ArrayList<>();
+		
+		for(int i=0;i<5;i++) list.add(i);
+		Stream<Integer> st = list.stream();
+		list.add(5);	// New elements will be includd in stream
+		int sum = st.mapToInt(Integer::intValue).sum();
+		System.out.format("List: %s\n",list);
+		System.out.format("Sum of list: %d\n",sum);
+		try { 
+			sum = st.mapToInt(Integer::intValue).sum();	// Run time rror: stream can't be reused 
+		}
+		catch(Exception e) { System.out.println("Stream is not reusable.\n\n"); }
+	}
+	private void streamOf() {
 		
 		try {
 			int sum = 
@@ -52,7 +107,7 @@ public class BasicStream {
 			e.printStackTrace();
 		}
 	}
-	public void groupBy() {
+	private void groupBy() {
 		Map<String, List<Entry>> map = 
 			entries.stream().collect(Collectors.groupingBy((e)->e.type));
 		System.out.println("GroupingBy to map:");
@@ -65,7 +120,7 @@ public class BasicStream {
 
 		System.out.println("");
 	}
-	public void partitionBy() {
+	private void partitionBy() {
 	Map<Boolean, List<Entry>> map = 
 			entries.stream().collect(Collectors.partitioningBy((e)->e.type.equals("Even")));
 		System.out.println("PartitioningBy to map: "+map.getClass());

@@ -51,4 +51,16 @@ export class FoodcourtComponent implements OnInit {
 		(<HTMLInputElement>document.getElementById("court")).value=JSON.stringify(responseBody);
     });
   }
+  // Local rest api
+  sayHello() {
+	
+	const xmlHttp = new XMLHttpRequest();
+	xmlHttp.onload = function() {
+		(<HTMLInputElement>document.getElementById("court")).value=this.responseText;
+	}
+	
+	xmlHttp.open("GET","http://xulinux:8080/spring-boot-demo/hello?name=Jeff");
+	xmlHttp.send();
+  }
+
 }

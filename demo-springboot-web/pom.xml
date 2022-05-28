@@ -6,7 +6,7 @@
 	
 	<groupId>demo.springbootweb</groupId>
 	<artifactId>demo-springboot-web</artifactId>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<version>1.0</version>
 
 	<parent>
