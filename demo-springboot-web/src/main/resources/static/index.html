@@ -1,0 +1,65 @@
+<html>
+<head>
+<script type="text/javascript">
+function registerClub(name) {
+	const ajax=new XMLHttpRequest();
+	fd = new FormData();
+	fd.append("name",name);
+	url="/club/register-put";
+	ajax.onreadystatechange=function() {
+		      console.log(ajax.status);
+		      console.log(ajax.responseText);
+		};
+	ajax.open("PUT", url);
+	ajax.send(fd);
+}
+function deleteClub(name) {
+	const ajax=new XMLHttpRequest();
+	fd = new FormData();
+	fd.append("name",name);
+	url="/club/delete";
+	ajax.onreadystatechange=function() {
+		      console.log(ajax.status);
+		      console.log(ajax.responseText);
+		};
+	ajax.open("DELETE", url);
+	ajax.send(fd);
+}
+</script>
+</head>
+<body>
+<h1>A simple Spring boot Rest API</h1>
+Say Hello with <br>
+<a href=/hello?name=Jeff>Rest</a>, &nbsp;
+<a href=/hello1?name=Jeff>MVC with Thymeleaf</a>&nbsp;
+<a href=/hello2?name=Jeff>MVC without Thymeleaf)</a>&nbsp;
+<a href=/hello3?name=Jeff>MVC with ResponseEntity)</a>&nbsp;
+<a href=/hello4?name=Jeff>MVC with HTTPServletResponse)</a>&nbsp;
+
+<br><hr><br>
+
+Dev club: 
+<a href=/club/get-all>list members</a>, &nbsp;
+<a href=/club/get?name=Jasmine><b>check<b></b></a><br><br><br>
+
+<!-- HTML does not support put, below will fail -->
+<form modelAttribute="userForm" action=/club/register method="put">
+<input name="name" type=text value="Jasmine" />
+<input type=Submit value="Register(PUT)"/>
+</form>
+<!-- HTML POST is OK -->
+<form modelAttribute="userForm" action=/club/register method="post">
+<input name="name" type=text value="Jasmine" />
+<input type=Submit value="Register(POST)"/>
+</form>
+
+<!-- Ajax supporst put -->
+<input id=nameField name="name" type=text value="Jasmine" />
+<button id=testAjax onclick=registerClub(document.getElementById("nameField").value)>Reg (Ajax Put)</button>
+<br><br>
+<input id=deleteField name="name" type=text value="Jasmine" />
+<button onclick=deleteClub(document.getElementById("deleteField").value)>Delete (Ajax Put)</button>
+<br><br>
+
+</body>
+</html>

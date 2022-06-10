@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HelloWorld {
+public class HelloWorldRest {
 
 	Logger log = LoggerFactory.getLogger(this.getClass());
 
 	@GetMapping("/hello")
 	public String sayHello(@RequestParam String name) {
-		String msg = "{ Hello: "+name+" }";
-		log.info(name);
+		String msg = "{ Hello: "+name+"(Rest) }";
+		log.info(msg);
 		return msg;	
 	}
 }
