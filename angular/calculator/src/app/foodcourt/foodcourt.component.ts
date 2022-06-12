@@ -23,7 +23,14 @@ export class FoodcourtComponent implements OnInit {
   getFoodCourt() {
 	const xmlHttp = new XMLHttpRequest();
 	xmlHttp.onload = function() {
-		(<HTMLInputElement>document.getElementById("court")).value=this.responseText;
+		var json = JSON.parse(this.responseText);
+		const data = json.data;
+		var result = "";
+		// ":any" to resolve error: TS7006 Parameter implicitly has an 'any' type
+		data.forEach((d:any) => 
+		result+=d.city+":"+d.name+":"+d.user_rating.average_rating+"\n"
+		) ;
+		(<HTMLInputElement>document.getElementById("court")).value=result;
 	}
 	
 	xmlHttp.open("GET","https://jsonmock.hackerrank.com/api/food_outlets?city=Seattle&page=1");
