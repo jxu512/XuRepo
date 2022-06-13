@@ -1,17 +1,31 @@
 <html>
 <head>
 <script type="text/javascript">
-function registerClub(name) {
+function registerClub(theForm) {
 	const ajax=new XMLHttpRequest();
-	fd = new FormData();
-	fd.append("name",name);
+	fd = new FormData(theForm);
+	//fd.append("name",name);
 	url="/club/register-put";
 	ajax.onreadystatechange=function() {
-		      console.log(ajax.status);
-		      console.log(ajax.responseText);
+		console.log(ajax.status);
 		};
 	ajax.open("PUT", url);
 	ajax.send(fd);
+}
+function addPoints(theForm) {
+	const ajax=new XMLHttpRequest();
+	fd = new FormData(theForm);
+	//fd.append("name",name);
+	
+	params= {"name":"Jeff", "points":500};
+	
+	url="/club/add-points";
+	ajax.onreadystatechange=function() {
+		      console.log(ajax.status);
+		};
+	ajax.open("PATCH", url);
+	ajax.setRequestHeader("Content-Type","application/json; charset=utf-8");
+	ajax.send(JSON.stringify(params));
 }
 function deleteClub(name) {
 	const ajax=new XMLHttpRequest();
@@ -19,8 +33,7 @@ function deleteClub(name) {
 	fd.append("name",name);
 	url="/club/delete";
 	ajax.onreadystatechange=function() {
-		      console.log(ajax.status);
-		      console.log(ajax.responseText);
+		console.log(ajax.responseText);
 		};
 	ajax.open("DELETE", url);
 	ajax.send(fd);
@@ -44,21 +57,32 @@ Dev club:
 
 <!-- HTML does not support put, below will fail -->
 <form modelAttribute="userForm" action=/club/register method="put">
-<input name="name" type=text value="Jasmine" />
+<input type="hidden" name="_method" value="put" />
+<label>Name:</label><input id=nameField name="name" type=text size=8 value="Jasmine" />
+<label>points:</label><input id=nameField name="points" type=text size=6 value="200" />
 <input type=Submit value="Register(PUT)"/>
 </form>
 <!-- HTML POST is OK -->
 <form modelAttribute="userForm" action=/club/register method="post">
-<input name="name" type=text value="Jasmine" />
+<label>Name:</label><input id=nameField name="name" type=text size=8 value="Jasmine" />
+<label>points:</label><input id=nameField name="points" type=text size=6 value="200" />
 <input type=Submit value="Register(POST)"/>
 </form>
 
 <!-- Ajax supporst put -->
-<input id=nameField name="name" type=text value="Jasmine" />
-<button id=testAjax onclick=registerClub(document.getElementById("nameField").value)>Reg (Ajax Put)</button>
-<br><br>
-<input id=deleteField name="name" type=text value="Jasmine" />
-<button onclick=deleteClub(document.getElementById("deleteField").value)>Delete (Ajax Put)</button>
+<form onsubmit=registerClub(this) >
+<label>Name:</label><input id=nameField name="name" type=text size=8 value="Jasmine" />
+<label>points:</label><input id=pointsField name="points" type=text size=6 value="200" />
+<input type=submit value="Reg (Ajax Put)"></input>
+</form>
+<form onsubmit=addPoints(this) >
+<label>Name:</label><input id=nameField name="name" type=text size=8 value="Jasmine" />
+<label>points:</label><input id=pointsField name="points" type=text size=6 value="200" />
+<input type=submit value="Add points (Ajax PATCH"></input>
+</form>
+
+<label>Name:</label><input id=deleteField name="name" type=text size=8 value="Jasmine" />
+<button onclick=deleteClub(document.getElementById("deleteField").value)>Delete (Ajax Delete)</button>
 <br><br>
 
 </body>

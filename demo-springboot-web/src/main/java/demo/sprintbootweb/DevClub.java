@@ -4,11 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/club")
 public class DevClub {
-	
+	Logger log = LoggerFactory.getLogger(this.getClass());
+
 	private Map<String, Integer> club = null;
 	
 	public DevClub() {
@@ -50,13 +57,29 @@ public class DevClub {
 	// Put not supported by HTTP, test with curl or Ajax
 	// curl -X PUT -dname=Jessica http://localhost:7777/club/register-put
 	@PutMapping("/register-put") 
-	public String register1(@RequestParam("name") String name) {
+	public String register1(Rewards rewards) {
+		String name=rewards.getName();
+		int points = rewards.getpoints();
 		Integer obj = club.get(name);
 		if(obj!=null) {
 			return name + " already registered.";
 		}
 		else {
-			club.put(name, 1);
+			club.put(name, points);
+			return name+":"+club.get(name);
+		}
+	}
+	@PatchMapping(path="/add-points", consumes = MediaType.APPLICATION_JSON_VALUE) 
+	public String addPoints(@RequestBody Rewards rewards, @RequestHeader(name="Content-Type") String type) {
+		log.info("Content-Type:" + type);
+		String name=rewards.getName();
+		int points = rewards.getpoints();
+		Integer obj = club.get(name);
+		if(obj==null) {
+			return name + " not registered.";
+		}
+		else {
+			club.put(name, points+obj);
 			return name+":"+club.get(name);
 		}
 	}
