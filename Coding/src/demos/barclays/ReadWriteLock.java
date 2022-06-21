@@ -1,3 +1,8 @@
+/*
+Implement ReadWriteLock, multiple reads can happen at same time if no write going on, 
+and only onw write can happen at any time
+*/
+
 package demos.barclays;
 
 import java.util.ArrayList;
@@ -16,7 +21,6 @@ public class ReadWriteLock {
 	}
 	
 	private void test(ReadWriteLock rw) {
-		// TODO Auto-generated method stub
 		
 		int num = 5;
 		Thread[] threads=new Thread[num];
@@ -30,7 +34,6 @@ public class ReadWriteLock {
 			try {
 				threads[i].join();
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -48,7 +51,6 @@ public class ReadWriteLock {
 				try {
 					this.wait();
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -69,7 +71,6 @@ public class ReadWriteLock {
 				try {
 					this.wait();
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -89,6 +90,9 @@ public class ReadWriteLock {
 
 }
 
+/*
+	testing thread: cnt and list are shared resource guarded by ReadWriteLock
+*/
 class MyRunnable implements Runnable{
 	
 	String name;
@@ -108,6 +112,7 @@ class MyRunnable implements Runnable{
 			lock.acquireWriteLock();
 			list.add("From "+name);
 			cnt[0]+=1;
+			// cnt is expected to be no more than 1
 			System.out.println("Updated from "+name+", writers:"+cnt[0]);
 			cnt[0]-=1;
 			lock.releaseWriteLock();

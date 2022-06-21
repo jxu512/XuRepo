@@ -6,7 +6,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
 public class TestOSFunctions {
 
-	static BlockingQueue<FutureTask> queue = new ArrayBlockingQueue<FutureTask>(10);
+	static BlockingQueue<FutureTask<String>> queue = new ArrayBlockingQueue<>(10);
 
 	public static void main(String[] args) {
 		
@@ -23,10 +23,9 @@ public class TestOSFunctions {
 		}.start();
 		
 		// main thread responsible for calling native methods
-		TestOSFunctions test = new TestOSFunctions();
 		int count=0;
 		while(count++<numOfTestRun) {
-			FutureTask f;
+			FutureTask<String> f;
 			try {
 					f = queue.take();
 					f.run();
@@ -36,6 +35,7 @@ public class TestOSFunctions {
 		}
 	}
 
+	// static function to be called from clients 
 	public static String getOSValue (int a) {
 		OSGetValue getFunc = new OSGetValue(a);
 		FutureTask<String> task = new FutureTask<>(getFunc);
@@ -47,6 +47,7 @@ public class TestOSFunctions {
 		}
 		return null;
 	}
+	// static function to be called from clients 
 	public static String setOSValue (int c, String d) {
 		
 		OSSetValue setFunc = new OSSetValue(c,d);

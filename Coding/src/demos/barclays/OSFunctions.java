@@ -1,3 +1,8 @@
+/*
+ Assume the native functions can only be executed from main thread
+ Write library function to server the functions for call from any threads / clients
+ 
+*/
 package demos.barclays;
 
 class OSFunctions {

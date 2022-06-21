@@ -11,6 +11,7 @@ public class Barclays {
 		b.repeatString(s, n);
 		b.repeatString_v1(s, n);
 	}
+	// Find number of one's in an integer
 	public int numOfOnes(int a) {
 	
 		int total = 0;
@@ -24,6 +25,7 @@ public class Barclays {
 		return total;
 	}
 
+	// Repeating a string by n times
 	public String repeatString(String s, int n) {
 
 		StringBuilder sb = new StringBuilder();
@@ -36,7 +38,7 @@ public class Barclays {
 		//System.out.format("%s repeated %d times: %s\n", s, n, sb.toString());
 		return sb.toString();
 	}
-
+	// Improved version
 	public String repeatString_v1(String s, int n) {
 	
 		StringBuilder sb = new StringBuilder();

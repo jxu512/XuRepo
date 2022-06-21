@@ -1,3 +1,9 @@
+/*
+ Balance a binary search tree while maintain node order
+ step 1: traverse tree to get ordered list of nodes
+ step 2: construct balanced tree from list with recursion
+*/
+
 package demos.barclays;
 
 import java.util.ArrayList;
@@ -5,23 +11,21 @@ import java.util.List;
 
 public class BalancingTree {
 
-	public void balancing(Node root) {
+	public Node balancing(Node root) {
 		
 		// Traverse tree to get sorted list
 		List<Integer> list =new ArrayList<>(); 
 		getList(root, list);
-		// Construc balanced tree
-		Node balanced = conctructTree(list);
+		// Construct balanced tree
+		return conctructTree(list);
 	}
 
 	private Node conctructTree(List<Integer> list) {
-		// TODO Auto-generated method stub
+
 		return build(0, list.size()-1, list);
-		
 	}
 
 	private Node build(int i, int j, List<Integer> list) {
-		// TODO Auto-generated method stub
 
 		if(i==j) return new Node(list.get(i));
 		int mid=i+(j-i)/2;
@@ -32,12 +36,11 @@ public class BalancingTree {
 		return n;
 	}
 
-	private void getList(Node root, List<Integer> list) {
-		// TODO Auto-generated method stub
+	private void getList(Node node, List<Integer> list) {
 
-		if(root.left!=null) getList(root.left, list);
-		list.add(root.val);
-		if(root.right!=null) getList(root.right, list);
+		if(node.left!=null) getList(node.left, list);
+		list.add(node.val);
+		if(node.right!=null) getList(node.right, list);
 	}
 	
 	// Main

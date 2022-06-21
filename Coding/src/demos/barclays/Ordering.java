@@ -1,3 +1,6 @@
+/*
+Interface allowing adding relation, greater than, and then query the relation
+*/
 package demos.barclays;
 
 public interface Ordering {

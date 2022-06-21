@@ -11,9 +11,10 @@ public class OrderImpl implements Ordering{
 	// List of ordered relations
 	List<Object[]> list = new ArrayList<>();
 	
+	// obj[0] greater than obj[1]
 	@Override
 	public void addRelation(Object a, Object b, boolean greater) {
-		// TODO Auto-generated method stub
+
 		Object[] obj=new Object[2];
 		if(greater) { obj[0]=a;obj[1]=b;}
 			else { obj[0]=b;obj[1]=a;}
@@ -22,13 +23,12 @@ public class OrderImpl implements Ordering{
 
 	@Override
 	public boolean isGreater(Object x, Object y) {
-		// TODO Auto-generated method stub
-		
-		return bfs(x,y,list);
+
+		return bfs(x,y);
 	}
 
-	private boolean bfs(Object x, Object y, List<Object[]> list2) {
-		// TODO Auto-generated method stub
+	// Given object x and y, use BFS to find out relation
+	private boolean bfs(Object x, Object y) {
 
 		Queue<Object> queue = new LinkedList<Object>();
 		queue.add(x);
@@ -37,16 +37,15 @@ public class OrderImpl implements Ordering{
 			Object cur = queue.poll();
 			if(cur.equals(y)) return true;
 			// Finding matching relations
-			findRel(cur, queue, list);
+			findRel(cur, queue);
 		}
 		
 		return false;
 	}
 
-	private void findRel(Object cur, Queue<Object> queue, List<Object[]> list2) {
-		// TODO Auto-generated method stub
-		int size=list.size();
-		Iterator<Object[]> it = list2.iterator();
+	private void findRel(Object cur, Queue<Object> queue) {
+
+		Iterator<Object[]> it = list.iterator();
 		while(it.hasNext()) {
 			Object[] temp=it.next();
 			if(temp[0].equals(cur)) queue.offer(temp[1]);

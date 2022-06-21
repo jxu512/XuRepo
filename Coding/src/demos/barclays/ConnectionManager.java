@@ -29,6 +29,8 @@ public class ConnectionManager {
     public synchronized Connection getConnection(){
     
 	    while(true) {
+	    	
+	    	// Reuse an existing available connection
 	        for(int i=0;i<conns.size();i++){
 	            if(avail[i]==0) {
 		            avail[i]=1;
@@ -36,7 +38,7 @@ public class ConnectionManager {
 		            return conns.get(i);
 	          }
 	        }
-	        // Below maxConn
+	        // Create new connection if maxConn hasn't been reached yet 
 	        if(conns.size()<maxConn){
 		        Connection c = new Connection();
 		        avail[conns.size()]=1;
@@ -44,7 +46,7 @@ public class ConnectionManager {
 	        	System.out.println(Thread.currentThread().getName()+" got new...");
 		        return c;
 	        }
-	        else {  // maxConn reached
+	        else {  // maxConn reached, wait for available connection
 	        	System.out.println(Thread.currentThread().getName()+" waiting...");
 	            try {
 					wait();
