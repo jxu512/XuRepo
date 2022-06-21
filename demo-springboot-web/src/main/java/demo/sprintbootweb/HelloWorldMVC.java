@@ -22,7 +22,7 @@ public class HelloWorldMVC {
 	Logger log = LoggerFactory.getLogger(this.getClass());
 
 	@GetMapping("/hello1")
-	public String sayHello(@RequestParam String name, Model model) {
+	public String sayHello1(@RequestParam String name, Model model) {
 		String msg = "{ Hello: "+name+" (mvc with Thymeleaf) }";
 		log.info(msg);
 		model.addAttribute("name", name);

@@ -1,3 +1,9 @@
+<!--
+package: mvn package
+deploy to tomcat: spring-boot-demo.war
+deploy root: war file name, spring-boot-demo
+-->
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
@@ -12,8 +18,8 @@
 	<parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <!-- Swagger 2 does not work with Spring boot 2.6 -->
-        <version>2.5.8</version>
+        <!-- See application.yml and SwaggerConfig.java for special processing to make swagger 2 work with spring 2.6 -->
+        <version>2.6.5</version>
     </parent>
 
     <properties>

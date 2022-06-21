@@ -1,3 +1,9 @@
+<!-- 
+HTML page for testing DevClub.java
+deploy root: /spring-boot-demo
+module url: /club
+-->
+
 <html>
 <head>
 <script type="text/javascript">
@@ -5,7 +11,7 @@ function registerClub(theForm) {
 	const ajax=new XMLHttpRequest();
 	fd = new FormData(theForm);
 	//fd.append("name",name);
-	url="/club/register-put";
+	url="/spring-boot-demo/club/register-put";
 	ajax.onreadystatechange=function() {
 		console.log(ajax.status);
 		};
@@ -19,7 +25,7 @@ function addPoints(theForm) {
 	
 	params= {"name":"Jeff", "points":500};
 	
-	url="/club/add-points";
+	url="/spring-boot-demo/club/add-points";
 	ajax.onreadystatechange=function() {
 		      console.log(ajax.status);
 		};
@@ -31,7 +37,7 @@ function deleteClub(name) {
 	const ajax=new XMLHttpRequest();
 	fd = new FormData();
 	fd.append("name",name);
-	url="/club/delete";
+	url="/spring-boot-demo/club/delete";
 	ajax.onreadystatechange=function() {
 		console.log(ajax.responseText);
 		};
@@ -52,18 +58,18 @@ Say Hello with <br>
 <br><hr><br>
 
 Dev club: 
-<a href=/club/get-all>list members</a>, &nbsp;
-<a href=/club/get?name=Jasmine><b>check<b></b></a><br><br><br>
+<a href=/spring-boot-demo/club/get-all>list members</a>, &nbsp;
+<a href=/spring-boot-demo/club/get?name=Jasmine><b>check<b></b></a><br><br><br>
 
 <!-- HTML does not support put, below will fail -->
-<form modelAttribute="userForm" action=/club/register method="put">
+<form modelAttribute="userForm" action=/spring-boot-demo/club/register method="put">
 <input type="hidden" name="_method" value="put" />
 <label>Name:</label><input id=nameField name="name" type=text size=8 value="Jasmine" />
 <label>points:</label><input id=nameField name="points" type=text size=6 value="200" />
 <input type=Submit value="Register(PUT)"/>
 </form>
 <!-- HTML POST is OK -->
-<form modelAttribute="userForm" action=/club/register method="post">
+<form modelAttribute="userForm" action=/spring-boot-demo/club/register method="post">
 <label>Name:</label><input id=nameField name="name" type=text size=8 value="Jasmine" />
 <label>points:</label><input id=nameField name="points" type=text size=6 value="200" />
 <input type=Submit value="Register(POST)"/>

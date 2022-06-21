@@ -11,8 +11,8 @@ public class HelloWorldRest {
 
 	Logger log = LoggerFactory.getLogger(this.getClass());
 
-	@GetMapping("/hello")
-	public String sayHello(@RequestParam String name) {
+	@GetMapping("/hello-rest")
+	public String sayHelloRest(@RequestParam String name) {
 		String msg = "{ Hello: "+name+"(Rest) }";
 		log.info(msg);
 		return msg;	
