@@ -1,3 +1,4 @@
+# Deploy from local docker image, need to run "minikube docker-env" so that kube points to local Docker
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -19,6 +20,6 @@ spec:
     spec:
       containers:
       - image: springboot-demo
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         name: springboot-demo
         resources: {}

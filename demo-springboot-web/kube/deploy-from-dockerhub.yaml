@@ -1,0 +1,24 @@
+#Deploy from dockerhub
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: springboot-from-dockerhub
+  name: springboot-from-dockerhub
+spec:
+  template:
+    metadata:
+      labels:
+        app: springboot-from-dockerhub
+    spec:
+      containers:
+      # host can be skipped since it is default
+      - image: docker.io/jxu512/jeffrepo
+        imagePullPolicy: Always
+        name: springbootdemo
+        resources: {}
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
