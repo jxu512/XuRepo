@@ -1,6 +1,10 @@
-From command line:
+To build and run From command line:
 1. mvn package
 2. java -Dspring.profiles.active=dos -jar target\demo-springboot-1.0-SNAPSHOT.jar
 
-From eclipse
+To run From eclipse
 Run demo.sprintboot.SpringBootConsoleApplication
+
+To build image and deploy from local
+
+To build image and deploy from Docker hub

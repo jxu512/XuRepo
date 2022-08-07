@@ -5,21 +5,21 @@ deploy root: war file name, spring-boot-demo
 -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-	https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+		https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	
 	<groupId>demo.springbootweb</groupId>
 	<artifactId>demo-springboot-web</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<version>1.0</version>
 
 	<parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <!-- See application.yml and SwaggerConfig.java for special processing to make swagger 2 work with spring 2.6 -->
-        <version>2.6.5</version>
+        <version>2.7.1</version>
     </parent>
 
     <properties>
@@ -44,6 +44,15 @@ deploy root: war file name, spring-boot-demo
 		    <artifactId>springfox-boot-starter</artifactId>
 	    	<version>3.0.0</version>
 		</dependency>
+		<dependency>
+		  <groupId>com.github.ulisesbocchio</groupId>
+		  <artifactId>jasypt-spring-boot-starter</artifactId>
+		  <version>3.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
     </dependencies>
 	
     <build>
@@ -53,6 +62,11 @@ deploy root: war file name, spring-boot-demo
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+			<plugin>
+			   <groupId>com.github.ulisesbocchio</groupId>
+			   <artifactId>jasypt-maven-plugin</artifactId>
+			   <version>3.0.3</version>
+			 </plugin>
         </plugins>
 	</build>
 	
