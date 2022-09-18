@@ -1,0 +1,5 @@
+This is demo for websocket, a dynamic web project, with Tomcat selected as server.
+It can run from eclipse 1) Tomcat or 2) websocket, both bring up Tomcat server. option 2) brings up browser as well
+
+We can also export war and run standard alone Tomcat.
+ 
