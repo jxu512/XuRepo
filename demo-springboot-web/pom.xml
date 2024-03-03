@@ -12,7 +12,7 @@ deploy root: war file name, spring-boot-demo
 	
 	<groupId>demo.springbootweb</groupId>
 	<artifactId>demo-springboot-web</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<version>1.0</version>
 
 	<parent>
@@ -31,6 +31,10 @@ deploy root: war file name, spring-boot-demo
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
 	   </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-actuator</artifactId>
