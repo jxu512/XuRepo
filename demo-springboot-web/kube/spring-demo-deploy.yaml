@@ -18,7 +18,7 @@ spec:
         app: springboot-demo
     spec:
       containers:
-      - image: springboot-demo
-        imagePullPolicy: Never
-        name: springboot-demo
-        resources: {}
+        - image: docker.io/jxu512/jeffrepo
+          imagePullPolicy: Never
+          name: springboot-demo
+          resources: {}
