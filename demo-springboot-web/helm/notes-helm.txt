@@ -1,0 +1,10 @@
+1. create chart
+  helm create springbootdemo-helm
+  this creates a folder springbootdemo-helm, modify values.yaml as needed for your application
+2. In the parent folder of springbootdemo-helm, run
+  helm install release-name /springbootdemo-helm/
+  this will install the chart form local springbootdemo-helm/
+3. To uninstall
+  helm uninstall release-name
+  
+appVersion: "latest" in Charts.yaml must be a valid tag for repository: docker.io/jxu512/jeffrepo in values.yaml

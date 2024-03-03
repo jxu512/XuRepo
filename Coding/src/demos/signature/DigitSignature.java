@@ -9,7 +9,6 @@ import java.security.PublicKey;
 import java.security.Signature;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
-import java.util.stream.Stream;
 
 public class DigitSignature {
 

@@ -1,6 +1,16 @@
-From command line:
+To build and run From command line:
 1. mvn package
 2. java -Dspring.profiles.active=dos -jar target\demo-springboot-1.0-SNAPSHOT.jar
 
-From eclipse
+To run From eclipse
 Run demo.sprintboot.SpringBootConsoleApplication
+
+To build image and deploy from local
+
+To build image and deploy from Docker hub
+
+3. to launch with remote debug
+java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8000 -jarspring-boot-demo.jar
+then to attach for debug
+jdb -connect com.sun.jdi.SocketAttach:hostname=localhost,port=8000
+or use eclipse "Remote Java Application"
