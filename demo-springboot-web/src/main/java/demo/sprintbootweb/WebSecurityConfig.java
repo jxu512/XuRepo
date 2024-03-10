@@ -14,11 +14,11 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class WebSecurityConfig {
 
-    @Bean
+    //@Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .anyRequest().authenticated()
+                    .anyRequest().authenticated()
                 )
                 .httpBasic();
 
@@ -30,7 +30,7 @@ public class WebSecurityConfig {
         UserDetails user =
                 User.withDefaultPasswordEncoder()
                         .username("jeff")
-                        .password("jeffrey1")
+                        .password("jeff")
                         .roles("USER")
                         .build();
 

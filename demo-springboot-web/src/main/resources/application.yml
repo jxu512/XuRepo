@@ -18,10 +18,10 @@ server:
 logging:
   level:
     org.springframework: INFO
-log.path: "/opt/app/logs"
+log.path: "/home/jeff/dev/logs"
 
 management.endpoints.web.exposure.include: "*"
 
 # Needed for swagger 2 to work with Spring boot 2.6
 spring.mvc.pathmatch.matching-strategy: ant_path_matcher
-server.servlet.context-path: /spring-boot-demo
+#server.servlet.context-path: /spring-boot-demo
