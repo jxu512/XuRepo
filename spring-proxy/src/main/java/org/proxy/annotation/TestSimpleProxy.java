@@ -1,23 +1,20 @@
 package org.proxy.annotation;
 
 import org.proxy.common.Animal;
-import org.proxy.common.Dog;
-import org.proxy.common.DogAdvise;
-import org.springframework.aop.framework.ProxyFactory;
+import org.proxy.common.ConfigApp;
 import org.springframework.aop.framework.ProxyFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 
 @Configuration
-public class TestSimpleProxy1 {
+public class TestSimpleProxy {
 
     @Autowired
     private ProxyFactoryBean proxyFactoryBean;
 
     public static void main(String[] args) {
-        new TestSimpleProxy1().testProxy();
+        new TestSimpleProxy().testProxy();
     }
 
     private void testProxy() {

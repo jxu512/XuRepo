@@ -1,4 +1,4 @@
-package org.proxy.annotation;
+package org.proxy.common;
 
 import org.proxy.common.Dog;
 import org.proxy.common.DogAdvise;
@@ -10,6 +10,11 @@ public class ConfigApp {
     @Bean
     public Dog getDogBean() {
         return new Dog();
+    }
+
+    @Bean
+    public DogClass getDogClassBean() {
+        return new DogClass();
     }
 
     @Bean(name="dogAdvise")

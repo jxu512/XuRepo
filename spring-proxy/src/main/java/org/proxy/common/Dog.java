@@ -1,6 +1,8 @@
 package org.proxy.common;
 
-public class Dog implements Animal{
+import org.aopalliance.aop.Advice;
+
+public class Dog implements Animal, Advice {
 
     @Override
     public void move() {
