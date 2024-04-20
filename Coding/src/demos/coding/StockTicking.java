@@ -4,13 +4,16 @@ package demos.coding;
  * (INTC, APPL, etc) plus a volume which you cumulate over time. topKstocks would return the k stocks 
  * with the highest volume.*/
 
+import java.util.Vector;
+
 public class StockTicking {
 
-	void addStocksVolume(string stockSymbol, int volume) {
+	void addStocksVolume(String stockSymbol, int volume) {
 
 	}
 
-	vector<string> topKstocks(int k) {
-				// return k top stocks 
+	Vector<String> topKstocks(int k) {
+				// return k top stocks
+		return null;
 	}
 }

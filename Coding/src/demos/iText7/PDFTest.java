@@ -1,5 +1,5 @@
 package demos.iText7;
-
+/*
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.font.PdfFont;
@@ -7,10 +7,11 @@ import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Text;
-
+*/
 public class PDFTest{
 
        public void pdf_7(){
+           /*
               try {
                      String DEST = "c:\\tmp\\test7.pdf";
                      PdfFont font1 = PdfFontFactory.createFont("KozMinPro-Regular","UniJIS-UCS2-HW-H");
@@ -28,6 +29,7 @@ public class PDFTest{
               }catch (Exception e) {
                      e.printStackTrace();
               }
+              */
        }
 
        public static void main(String[] args) {

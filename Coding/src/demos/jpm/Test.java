@@ -10,14 +10,19 @@ public class Test {
 	public static void main(String[] args) {
 		Test.swap();;
 		Test.reverse();
-		Integer[] array = { 2,1,4,5,6 };
+		Integer[] array = { 2,1,4,6,5 };
 		Test.sort(array);
 	}
 	
 	public static void sort(Integer[] array) {
-		
+		System.out.println(array);
+
+		// Arrays.sort
+		Arrays.sort(array);
+
 		List<Integer> list = Arrays.asList(array);
 		System.out.println(list);
+		// Stream
 		List<Integer> sorted = list.stream().sorted().collect(Collectors.toCollection(ArrayList::new));
 		System.out.println(sorted);
 		
@@ -29,8 +34,10 @@ public class Test {
 		System.out.println(s);
 		char[] ch = s.toCharArray();
 		int len = s.length();
-		for(int i=0;i<len;i++) {
+		for(int i=0;i<len/2;i++) {
+			char tmp = ch[i];
 			ch[i] = ch[len-1-i];
+			ch[len-1-i] = tmp;
 		}
 		
 		String reversed = new String(ch);
@@ -41,7 +48,7 @@ public class Test {
 		int a=10;
 		int b=5;
 		
-		System.out.format("a:%d, b:%d ", a, b);
+		System.out.format("a:%d, b:%d => ", a, b);
 
 		a = a + b;
 		b = a - b;

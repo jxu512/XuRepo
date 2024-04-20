@@ -66,7 +66,6 @@ public class CurrencyRate {
 		
 		Queue<Rate> queue = new LinkedList<Rate>();
 		List list = (List)queue;
-		list.
 		return rate;
 	}
 	/**

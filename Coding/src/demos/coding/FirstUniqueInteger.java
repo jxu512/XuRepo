@@ -20,5 +20,6 @@ public class FirstUniqueInteger {
 	*/
     public Integer getFirstUnique() {
         // write your code here
+        return null;
     }
 }

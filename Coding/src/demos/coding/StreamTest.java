@@ -49,6 +49,5 @@ public class StreamTest {
     	StreamTest test = new StreamTest();
     	test.add(88);
     	test.getFirstUnique();
-    	test.get
     }
 }

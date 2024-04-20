@@ -1,17 +1,17 @@
 package demos.general;
 
-import com.google.gson.Gson;
+//import com.google.gson.Gson;
 
 public class GsonTest {	
 	public static void main(String[] args) {
-		
+		/*
 		Gson gson = new Gson();
 		Employee e = new Employee(1,"Jeff","citi", "JC");
 		System.out.println(gson.toJson(e));
 		
 		String json = "{\"id\":1,\"name\":\"Jeff\",\"company\":\"Barclays\",\"location\":\"NJ\"}";
 		System.out.println(gson.fromJson(json, Employee.class));
-		
+		*/
 	}
 }
 
