@@ -22,18 +22,18 @@ public class SecurityManager {
 	public static void main(String[] args) {
 		List<Order> orders=new ArrayList<>();
 		orders.add(new Order(new CustSecurity("ABC","Telsa"),200));
-		orders.add(new Order(new CustSecurity("ABC","Telsa"),-100));
+		orders.add(new Order(new CustSecurity("ABC","Telsa"),-50));
 		orders.add(new Order(new CustSecurity("ABC","Apple"),200));
-		orders.add(new Order(new CustSecurity("ABC","Apple"),100));
-		orders.add(new Order(new CustSecurity("XYZ","Telsa"),200));
+		orders.add(new Order(new CustSecurity("ABC","Apple"),160));
+		orders.add(new Order(new CustSecurity("XYZ","Telsa"),220));
 		orders.add(new Order(new CustSecurity("XYZ","Telsa"),-100));
-		orders.add(new Order(new CustSecurity("XYZ","Apple"),200));
-		orders.add(new Order(new CustSecurity("XYZ","Apple"),100));
+		orders.add(new Order(new CustSecurity("XYZ","Apple"),250));
+		orders.add(new Order(new CustSecurity("XYZ","Apple"),130));
 		orders.add(new Order(new CustSecurity("C123","IBM"),100));
-		orders.add(new Order(new CustSecurity("C123","Telsa"),200));
+		orders.add(new Order(new CustSecurity("C123","Telsa"),210));
 
 		SecurityManager cs = new SecurityManager();
-		System.out.println("For loop:"+cs.calcQty(orders));
+		System.out.println("For loop:"+cs.calcQty(orders).toString());
 		System.out.println("Stream:  "+cs.calcQtyStream(orders));
 	}
 	// Traditional
@@ -63,6 +63,18 @@ public class SecurityManager {
 		ToIntFunction<Order> summing = order -> order.qty;
 		map = orders.stream().collect(Collectors.groupingBy(classifier, supplier, Collectors.summingInt(o->o.qty)));
 
+		// Combined result
+		List<Order> list = orders.stream()
+				.collect(
+						Collectors.groupingBy(order -> order.getCustSecurity(), Collectors.summingInt(o->o.qty))
+				)
+				.entrySet().stream()
+				.map(e->new Order(e.getKey(),e.getValue()))
+				//.sorted()
+				.sorted((o1, o2) -> o1.qty == o2.qty ? 0 : (o1.qty < o2.qty ? -1 : 1))
+				.collect(Collectors.toList());
+		System.out.println("Total orders sorted: " + list);
+
 		Map<CustSecurity, List<Order>> m1 =
 				orders.stream().collect(
 						Collectors.groupingBy(Order::getCustSecurity)
@@ -72,7 +84,7 @@ public class SecurityManager {
 	}
 }
 
-class Order{
+class Order implements Comparable{
 	CustSecurity custSecurity;
 	int qty;
 	public Order(CustSecurity custSecurity,int q) {
@@ -81,6 +93,19 @@ class Order{
 	}
 	public CustSecurity getCustSecurity() {
 		return custSecurity;
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		if (qty == ((Order)o).qty) {
+			return 0;
+		} else {
+			return qty < ((Order)o).qty ? 1 : -1;
+		}
+	}
+	@Override
+	public String toString() {
+		return custSecurity.toString() + ":" + qty;
 	}
 }
 class CustSecurity implements Comparable{

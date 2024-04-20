@@ -14,8 +14,6 @@ import java.util.function.*;
 import java.util.regex.*;
 import java.util.stream.*;
 
-import com.google.gson.Gson;
-
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
@@ -60,7 +58,7 @@ class RestAPIFoodOutlets {
 	                .GET()
 	                .uri(URI.create(uri))
 	                .build();
-	
+	/*
 	        try {
 				HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 				String body = response.body();
@@ -71,6 +69,7 @@ class RestAPIFoodOutlets {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+	 */
     	}
         return res;
     }
