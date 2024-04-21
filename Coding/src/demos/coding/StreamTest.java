@@ -21,18 +21,19 @@ public class StreamTest {
     			.add(33)
     			.add(25)
     			.build();
-    	//intStream.forEach(num->System.out.println(num));
-    	//System.out.println();
     }
 
 	/**
 	* Adds integer num to a stream of integers.
 	*/
     public void add(int num) {
-        // write your code here
-    	intStream = IntStream.concat(intStream, IntStream.of(num));
-    	//newStream.forEach(n->System.out.println(n));
-    	//System.out.println();
+		// Stream can only be consumed once, below line causes below concat to fail
+		//intStream.forEach(System.out::println);
+		System.out.println();
+
+    	IntStream newStream = IntStream.concat(intStream, IntStream.of(num));
+    	newStream.forEach(System.out::println);
+    	System.out.println();
     }
 
 	/**

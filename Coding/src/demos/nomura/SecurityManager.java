@@ -41,7 +41,7 @@ public class SecurityManager {
 		Map<CustSecurity, Integer> map = new HashMap<>();
 		
 		for(Order o: orders) {
-			CustSecurity custSecurity = o.custSecurity;
+			CustSecurity custSecurity = o.getCustSecurity();
 			if(!map.containsKey(custSecurity)) map.put(custSecurity, o.qty);
 				else map.put(custSecurity, map.get(custSecurity)+o.qty);
 		}
@@ -50,13 +50,13 @@ public class SecurityManager {
 	// Stream
 	public Map<CustSecurity, Integer> calcQtyStream(List<Order> orders) {
 		Map<CustSecurity, Integer> map;
-		map = orders.stream().collect(Collectors.groupingBy(o->o.custSecurity,TreeMap::new,Collectors.summingInt(o->o.qty)));
+		map = orders.stream().collect(Collectors.groupingBy(Order::getCustSecurity,TreeMap::new,Collectors.summingInt(o->o.qty)));
 		// Or in multi steps
 		Function<Order, CustSecurity> classifier = //order -> order.custSecurity;	// lambda
 		new Function<Order, CustSecurity>() {
 			@Override
 			public CustSecurity apply(Order order) {
-				return order.custSecurity;
+				return order.getCustSecurity();
 			}
 		};
 		Supplier<Map<CustSecurity, Integer>> supplier = TreeMap::new;	// lambda
@@ -84,8 +84,8 @@ public class SecurityManager {
 	}
 }
 
-class Order implements Comparable{
-	CustSecurity custSecurity;
+class Order implements Comparable<Order>{
+	private final CustSecurity custSecurity;
 	int qty;
 	public Order(CustSecurity custSecurity,int q) {
 		this.custSecurity = custSecurity;
@@ -96,11 +96,11 @@ class Order implements Comparable{
 	}
 
 	@Override
-	public int compareTo(Object o) {
-		if (qty == ((Order)o).qty) {
+	public int compareTo(Order o) {
+		if (qty == o.qty) {
 			return 0;
 		} else {
-			return qty < ((Order)o).qty ? 1 : -1;
+			return qty < o.qty ? 1 : -1;
 		}
 	}
 	@Override
