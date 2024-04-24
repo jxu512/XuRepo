@@ -7,7 +7,7 @@ Ex:
 2 for number 13: 13=4+9
 */
 
-package demos.dp;
+package demos.dynamicprogramming;
 
 import java.util.Arrays;
 

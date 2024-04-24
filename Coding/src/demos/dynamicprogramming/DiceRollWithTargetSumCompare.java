@@ -1,4 +1,4 @@
-package demos.dp;
+package demos.dynamicprogramming;
 
 import java.text.NumberFormat;
 import java.util.Locale;

@@ -1,4 +1,4 @@
-package demos.dp;
+package demos.dynamicprogramming;
 
 public class Palindrome {
 
@@ -9,12 +9,13 @@ public class Palindrome {
 	public static void main(String[] args) {
 		Palindrome p = new Palindrome();
 		System.out.println("Input: "+args[0]+":"+args[0].length());
-		System.out.println(p.search(args[0]));
+		System.out.println(p.isParlindrome(args[0]));
+		System.out.println(p.isParlindromeRecursion(args[0]));
 	}
 	/**
 	 * 
 	 * @param str
-	 * @return
+	 * @return: palindrome with given string
 	 */
 	public String search(String str) {
 		int len = str.length();
@@ -65,4 +66,15 @@ public class Palindrome {
 		
 		return true;
 	}
+	private boolean isParlindromeRecursion(String s) {
+		if(s.length() == 1) {
+			return true;
+		}
+		if ( (s.length() == 2 || s.length() == 3) && s.charAt(0) == s.charAt(s.length()-1)) {
+			return true;
+		}
+
+		return s.charAt(0) == s.charAt(s.length()-1) && isParlindrome(s.substring(1,s.length()-1));
+	}
+
 }

@@ -1,4 +1,4 @@
-package demos.dp;
+package demos.dynamicprogramming;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -80,7 +80,7 @@ class Islands {
     	Islands islands = new Islands();
     	char[][] grid=  {
     			{'1','0','1'},
-    			{'0','1','0'},
+    			{'1','1','1'},
     			{'1','0','1'}
     	};
     	int num = islands.numIslands(grid);

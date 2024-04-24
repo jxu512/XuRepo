@@ -48,6 +48,8 @@ public class DecodeString {
     }
 	public static void main(String[] args) {
     	DecodeString decode = new DecodeString();
-    	decode.decode("3[a]2[b2[x]3[y2[z]]]4[c]");
+		String s = "3[a]2[b2[x]3[y2[z]]]4[c]";
+		System.out.println(s);
+    	decode.decode(s);
     }
 }

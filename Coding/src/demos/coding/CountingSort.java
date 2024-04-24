@@ -1,7 +1,7 @@
 package demos.coding;
 
 /*
-When numbers are within range, sya 1 to 1000, counting sort can be used
+When numbers are within range, say 1 to 1000, counting sort can be used
 int[] arr=int[1001], arr[num] increases for each num
 Result: add arr[num] of num 
 */
@@ -32,7 +32,7 @@ class Result2 {
     public static List<Integer> countingSort(List<Integer> arr) {
     // Write your code here
     	
-        List<Integer> result = new ArrayList<Integer>(arr.size());
+        List<Integer> result = new ArrayList<>(arr.size());
         int[] counts=new int[100];
         
         for(int i=0;i<arr.size();i++) result.add(0);

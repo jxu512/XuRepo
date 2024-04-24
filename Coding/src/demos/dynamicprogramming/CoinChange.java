@@ -1,4 +1,4 @@
-package demos.dp;
+package demos.dynamicprogramming;
 
 /*
 You are given an integer array coins representing coins of different denominations and an integer amount 

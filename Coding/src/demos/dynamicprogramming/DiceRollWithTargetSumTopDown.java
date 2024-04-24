@@ -1,4 +1,4 @@
-package demos.dp;
+package demos.dynamicprogramming;
 /*
 Success
 Details 

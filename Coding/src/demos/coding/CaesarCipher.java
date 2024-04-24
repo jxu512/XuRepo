@@ -20,12 +20,10 @@ public class CaesarCipher {
                  // Note: convert: (char) (*), have to use full parenthesis
                  sb.append((char)(ch<='z'?ch:(ch-'z'+'a'-1)));	// Correct, treat as char
                  //sb1.append((ch<='z'?ch:(ch-'z'+'a'-1)));		// Incorrect, treated as integer
-             }
-             else if(s.charAt(i)>='A' && s.charAt(i)<='Z') {
+             } else if(s.charAt(i)>='A' && s.charAt(i)<='Z') {
                  ch += (k%26);
                  sb.append((char)(ch<='Z'?ch:(ch-'Z'+'A'-1)));
-             }
-             else {
+             } else {
             	 sb.append(ch);
             	 sb1.append(ch);
              }
@@ -36,8 +34,10 @@ public class CaesarCipher {
     }
 
     public static void main(String[] args) {
-    	
+
+        String s = "abc-xyz";
+        System.out.println(s);
     	CaesarCipher cipher = new CaesarCipher();
-    	cipher.encode("abc-xyz", 2);
+    	cipher.encode(s, 2);
     }
 }
