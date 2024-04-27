@@ -9,7 +9,7 @@ sourceToDestination()
 Find distance between two nodes
  */
 
-package demos.coding;
+package demos.bfs;
 
 import java.util.Arrays;
 import java.util.LinkedList;

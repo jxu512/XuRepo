@@ -1,18 +1,19 @@
-package demos.leetcode;
+package demos.backtracking;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SubsetsBacktracking {
     List<List<Character>> result;
-	ArrayList<Character> temp = new ArrayList<Character>();
+	ArrayList<Character> temp = new ArrayList<>();
     
     /**
      * 
      * @param args
      */
     public static void main(String[] args) {
-    	char[] arr = { 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u' };
+    	//char[] arr = { 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u' };
+        char[] arr = { 'a','b','c','d' };
     	SubsetsBacktracking sub = new SubsetsBacktracking();
     	List<List<Character>> res = sub.getSubs(arr);
     	System.out.println(res);
@@ -37,7 +38,8 @@ public class SubsetsBacktracking {
      */
     private void subs(char[] nums, int index) {
         // End condition: each iteration must have processed all elements
-        if(index >= nums.length) {		// This condition gives all subsets
+        if(index >= nums.length)
+        {		// This condition gives all subsets
         	if(temp.size()==3)		// This condition gives subsets of fixed size only
         		result.add(new ArrayList<>(temp));	// Create new object from temp
             return;

@@ -1,4 +1,4 @@
-package demos.leetcode;
+package demos.backtracking;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,8 @@ public class SubsetsIterative {
      * @param args
      */
     public static void main(String[] args) {
-    	char[] arr = { 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u' };
+    	//char[] arr = { 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u' };
+        char[] arr = { 'a','b','c','d' };
     	SubsetsIterative sub = new SubsetsIterative();
     	List<List<Character>> res = sub.getSubs(arr);
     	//System.out.println(res);

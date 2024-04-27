@@ -22,6 +22,7 @@ public class MaximumSubarray {
                 max = Math.max(max + arr[i], arr[i]);
                 maxSA = Math.max(maxSA, max);
 
+                // Consider number can be negative, should be max of: maxSS, arr[i], and maxSS+arr[i]
                 maxSS = Math.max(Math.max(maxSS, arr[i]), maxSS + arr[i]);
             }
             return new int[] { maxSA, maxSS };
