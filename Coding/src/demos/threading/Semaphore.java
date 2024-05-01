@@ -47,14 +47,12 @@ public class Semaphore {
 		
 		Thread[] t = new Thread[15];
 		for(int i=0;i<t.length;i++) {
-			t[i] = new Thread() {
-				public void run() {
-					s.acquire();
-					System.out.println(Thread.currentThread().getName()+" got semaphore, remaining:"+s.available());
-					s.release();
-					System.out.println(Thread.currentThread().getName()+" released semaphore, remaining:"+s.available());
-				}
-			};
+			t[i] = new Thread(() -> {
+				s.acquire();
+				System.out.println(Thread.currentThread().getName()+" got semaphore, remaining:"+s.available());
+				s.release();
+				System.out.println(Thread.currentThread().getName()+" released semaphore, remaining:"+s.available());
+			});
 			t[i].start();
 		}
 	}

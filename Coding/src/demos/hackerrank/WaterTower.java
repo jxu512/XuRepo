@@ -9,6 +9,11 @@ Return: water units can be help by tower.
 
 */
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.stream.Stream;
+
 public class WaterTower {
 
 	public int calcWater(int[] tower) {
@@ -33,11 +38,18 @@ public class WaterTower {
 		return sum;
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		int[] tower = { 3, 5, 6, 2, 8 };
 		WaterTower water = new WaterTower();
+		tower = water.readInput();
 		System.out.format("Water units: %d", water.calcWater(tower));
 	}
-	
+
+	private int[] readInput() throws IOException {
+		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+		System.out.print("Please input: ");
+		return
+				Stream.of(bufferedReader.readLine().replaceAll("\\s+", " ").split(" ")).mapToInt(Integer::parseInt).toArray();
+	}
 }
