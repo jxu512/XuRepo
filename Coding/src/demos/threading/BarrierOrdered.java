@@ -30,7 +30,7 @@ class Runnable2 implements Runnable {
 	@Override
 	public void run() {
 
-		int loops=5000;
+		int loops=1000;
 		for(int i=0;i<loops;i++) {
 		
 		  	try {

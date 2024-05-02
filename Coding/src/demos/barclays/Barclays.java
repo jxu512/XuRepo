@@ -5,9 +5,10 @@ public class Barclays {
 	public static void main(String[] args) {
 		
 		Barclays b = new Barclays();
-		b.numOfOnes(127);
+		b.numOfOnes(126);
+		b.numOfOnes1(126);
 		String s="a";
-		int n=10000000;
+		int n=10;
 		b.repeatString(s, n);
 		b.repeatString_v1(s, n);
 	}
@@ -24,6 +25,19 @@ public class Barclays {
 		System.out.format("There are %d ones in %d\n", total, a);
 		return total;
 	}
+	public int numOfOnes1(int a) {
+
+		int total = 0;
+		int tmp = a;
+		while (tmp > 0) {
+			if (tmp % 2 == 1) {
+				total += 1;
+			}
+			tmp >>= 1;
+		}
+		System.out.format("There are %d ones in %d\n", total, a);
+		return total;
+	}
 
 	// Repeating a string by n times
 	public String repeatString(String s, int n) {
@@ -35,7 +49,7 @@ public class Barclays {
 		}
 		long t2=System.currentTimeMillis();
 		System.out.println("Time: "+((t2-t1))+", sb size:"+sb.length());
-		//System.out.format("%s repeated %d times: %s\n", s, n, sb.toString());
+		System.out.format("%s repeated %d times: %s\n", s, n, sb.toString());
 		return sb.toString();
 	}
 	// Improved version
@@ -50,10 +64,11 @@ public class Barclays {
 		    if(n%2==1) sb.append(sb1.toString());
 		    sb1.append(sb1.toString());
 		    n=n>>1;
-		    System.out.println("Loops:"+(++loops)+", sb1 size:"+sb1.length());		}
+		    //System.out.println("Loops:"+(++loops)+", sb1 size:"+sb1.length());
+			}
 		long t2=System.currentTimeMillis();
 		System.out.println("Time: "+((t2-t1))+", sb size:"+sb.length());
-		//System.out.format("%s repeated %d times: %s\n", s, times, sb.toString());
+		System.out.format("%s repeated %d times: %s\n", s, times, sb.toString());
 		return sb.toString();
 	}
 

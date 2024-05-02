@@ -10,6 +10,14 @@ public class FunctionAndSupplier{
   public static void main(String[] argv){
 	  
 	// String
+    Supplier supplier = new Supplier() {
+      @Override
+      public Object get() {
+        return new String();
+      }
+    };
+    System.out.println("Empty String:"+supplier.get());
+
     Supplier<String> func1  = () ->  new String();
     System.out.println("Empty String:"+func1.get());
     
@@ -36,4 +44,5 @@ public class FunctionAndSupplier{
     String[] intArray3 = arrayCreator3.apply(5); 
     System.out.println(Arrays.toString(intArray3));
   }
+
 }

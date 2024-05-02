@@ -2,6 +2,7 @@ package demos.jpm;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,7 +24,9 @@ public class Test {
 		List<Integer> list = Arrays.asList(array);
 		System.out.println(list);
 		// Stream
-		List<Integer> sorted = list.stream().sorted().collect(Collectors.toCollection(ArrayList::new));
+		List<Integer> sorted = list.stream().sorted().collect(Collectors.toList());
+		List<Integer> sorted1 = list.stream().sorted().collect(Collectors.toCollection(ArrayList::new));
+		List<Integer> sorted2 = list.stream().sorted().collect(Collectors.toCollection(LinkedList::new));
 		System.out.println(sorted);
 		
 	}

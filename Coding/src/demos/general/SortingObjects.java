@@ -22,13 +22,13 @@ public class SortingObjects {
 				return e1.id-e2.id;
 			}
 		);
-		
+
 		// Always OK
-		Set<MyEntry> set = new HashSet<MyEntry>();
-		for(int i=0;i<entries.length;i++) set.add(new MyEntry(i,String.valueOf(i)));
+		Set<MyEntry> set = new HashSet<>();
+		for (int i = 0; i < entries.length; i++) set.add(new MyEntry(i, String.valueOf(i)));
 		// Require MyEntry implementing Comparable
-		Set<MyEntry> set1 = new TreeSet<MyEntry>();
-		for(int i=0;i<entries.length;i++) set1.add(new MyEntry(i,String.valueOf(i)));
+		Set<MyEntry> set1 = new TreeSet<>();
+		for (int i = 0; i < entries.length; i++) set1.add(new MyEntry(i, String.valueOf(i)));
 	}
 
 }
