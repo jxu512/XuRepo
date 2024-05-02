@@ -31,6 +31,6 @@ public class Company {
     }
 
     public String toString() {
-        return "Name:" + name + ", localtion:" + location + ", employees:" + numberOfEmployees;
+        return "Name:" + name + ", location:" + location + ", employees:" + numberOfEmployees;
     }
 }

@@ -9,7 +9,7 @@ public class PlainJavaApplication {
 
     public static void main(String[] args) {
         PlainJavaApplication app = new PlainJavaApplication();
-        //app.testUsingDatasource();
+        app.testUsingDatasource();
         app.testUsingDriverManager();
     }
 
@@ -20,11 +20,9 @@ public class PlainJavaApplication {
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("select * from Company");
             List<Company> companies = new ArrayList<>();
-            if (rs.isBeforeFirst()) {
-                while(rs.next()) {
-                    CompanyRowMapper rowMapper = new CompanyRowMapper();
-                    companies.add(rowMapper.mapRow(rs, 1));
-                }
+            while (rs.next()) {
+                CompanyRowMapper rowMapper = new CompanyRowMapper();
+                companies.add(rowMapper.mapRow(rs, 1));
             }
             companies.forEach(System.out::println);
         } catch (SQLException e) {
@@ -38,13 +36,13 @@ public class PlainJavaApplication {
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("select * from Company");
             List<Company> companies = new ArrayList<>();
-            if (rs.isBeforeFirst()) {
-                while(rs.next()) {
-                    CompanyRowMapper rowMapper = new CompanyRowMapper();
-                    companies.add(rowMapper.mapRow(rs, 1));
-                }
+            while (rs.next()) {
+                CompanyRowMapper rowMapper = new CompanyRowMapper();
+                companies.add(rowMapper.mapRow(rs, 1));
             }
             companies.forEach(System.out::println);
+            Company c = companies.get(0);
+            int a=123_51_1234_1;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
