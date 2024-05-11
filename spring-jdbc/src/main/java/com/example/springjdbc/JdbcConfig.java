@@ -1,5 +1,6 @@
 package com.example.springjdbc;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
@@ -18,4 +19,8 @@ public class JdbcConfig {
         return dataSource;
     }
 
+    @Bean
+    public EmployeeService getEmployeeService() {
+        return new EmployeeService();
+    }
 }
