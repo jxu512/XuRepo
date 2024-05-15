@@ -4,7 +4,7 @@
  step 2: construct balanced tree from list with recursion
 */
 
-package demos.barclays;
+package demos.companies.barclays;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -9,7 +9,7 @@ XYZ			Apple		-80
 Calculate net qty
 
 */
-package demos.nomura;
+package demos.companies.nomura;
 
 import java.util.*;
 import java.util.function.Function;

@@ -1,4 +1,4 @@
-package demos.jpm;
+package demos.companies.jpm;
 
 import java.util.ArrayList;
 import java.util.Arrays;

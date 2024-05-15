@@ -3,7 +3,7 @@ Implement ReadWriteLock, multiple reads can happen at same time if no write goin
 and only onw write can happen at any time
 */
 
-package demos.barclays;
+package demos.companies.barclays;
 
 import java.util.ArrayList;
 import java.util.List;

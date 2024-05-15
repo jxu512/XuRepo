@@ -1,7 +1,7 @@
 /*
 Interface allowing adding relation, greater than, and then query the relation
 */
-package demos.barclays;
+package demos.companies.barclays;
 
 public interface Ordering {
 	

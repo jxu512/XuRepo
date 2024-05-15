@@ -1,4 +1,4 @@
-package demos.barclays;
+package demos.companies.barclays;
 
 public class BalancingTreeDSW {
 

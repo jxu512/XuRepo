@@ -1,4 +1,4 @@
-package demos.barclays;
+package demos.companies.barclays;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
