@@ -8,6 +8,8 @@ public class DogAdvise implements MethodInterceptor {
     @Override
     public Object invoke(MethodInvocation invocation) throws Throwable {
         System.out.print(invocation.getMethod().getName() + " is: ");
-        return invocation.proceed();
+        invocation.proceed();
+        System.out.print(invocation.getMethod().getName() + " completed ");
+        return "OK";
     }
 }

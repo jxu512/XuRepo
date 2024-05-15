@@ -12,7 +12,7 @@
     </div>
 </div>
 </body>
-<script>
+<script type="text/javascript">
     const messageWindow = document.getElementById("messages");
 
     const sendButton = document.getElementById("send");
@@ -34,6 +34,7 @@
     sendButton.onclick = function (event) {
         sendMessage(messageInput.value);
         messageInput.scrollTop=messageInput.scrollHeight;
+        messageInput.value="";
     };
 
     function sendMessage(message) {
@@ -42,7 +43,8 @@
     }
 
     function addMessageToWindow(message) {
-        messageWindow.innerHTML += `&#13;&#10;${message}`
+        messageWindow.innerHTML += `&#13;&#10;${message}`;
+        messageInput.focus();
     }
 
 </script>

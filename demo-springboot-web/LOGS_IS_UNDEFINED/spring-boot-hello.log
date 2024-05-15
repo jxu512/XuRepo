@@ -1,0 +1,99 @@
+2022-06-28 17:26:48,420 INFO org.springframework.boot.StartupInfoLogger [main] Starting HelloApplication using Java 11.0.3 on XuComputer with PID 20260 (G:\GITHub\XuRepo\demo-springboot-web\target\classes started by jeffrey in G:\GITHub\XuRepo\demo-springboot-web)
+2022-06-28 17:26:48,424 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-28 17:26:53,354 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 7777 (http)
+2022-06-28 17:26:53,376 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-7777"]
+2022-06-28 17:26:53,377 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-06-28 17:26:53,378 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-06-28 17:26:53,627 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-06-28 17:26:53,630 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 4936 ms
+2022-06-28 17:26:55,151 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 13 endpoint(s) beneath base path '/actuator'
+2022-06-28 17:26:55,906 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [main] Adding welcome page: class path resource [static/index.html]
+2022-06-28 17:26:56,315 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-7777"]
+2022-06-28 17:26:56,411 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 7777 (http) with context path ''
+2022-06-28 17:26:57,005 INFO org.springframework.boot.StartupInfoLogger [main] Started HelloApplication in 10.39 seconds (JVM running for 11.582)
+2022-06-28 17:27:17,740 INFO org.apache.juli.logging.DirectJDKLog [http-nio-7777-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-28 17:27:17,741 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7777-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-06-28 17:27:17,744 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7777-exec-1] Completed initialization in 2 ms
+2022-06-28 17:27:17,826 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-1] LogFilter: URI-/
+2022-06-28 17:27:17,828 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-1] LogFilter: URL-http://localhost:7777/
+2022-06-28 17:27:17,828 INFO demo.sprintbootweb.ClientFilter [http-nio-7777-exec-1] LogFilter: clientHost-null
+2022-06-28 17:27:18,296 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-2] LogFilter: URI-/favicon.ico
+2022-06-28 17:27:18,297 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-2] LogFilter: URL-http://localhost:7777/favicon.ico
+2022-06-28 17:27:18,298 INFO demo.sprintbootweb.ClientFilter [http-nio-7777-exec-2] LogFilter: clientHost-null
+2022-06-28 17:27:35,281 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-3] LogFilter: URI-/spring-boot-demo/club/get-all
+2022-06-28 17:27:35,283 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-3] LogFilter: URL-http://localhost:7777/spring-boot-demo/club/get-all
+2022-06-28 17:27:35,284 INFO demo.sprintbootweb.ClientFilter [http-nio-7777-exec-3] LogFilter: clientHost-null
+2022-06-28 17:32:45,445 INFO org.springframework.boot.StartupInfoLogger [main] Starting HelloApplication using Java 11.0.3 on XuComputer with PID 15760 (G:\GITHub\XuRepo\demo-springboot-web\target\classes started by jeffrey in G:\GITHub\XuRepo\demo-springboot-web)
+2022-06-28 17:32:45,452 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-28 17:32:48,530 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 7777 (http)
+2022-06-28 17:32:48,544 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-7777"]
+2022-06-28 17:32:48,545 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-06-28 17:32:48,545 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-06-28 17:32:48,729 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-06-28 17:32:48,729 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3159 ms
+2022-06-28 17:32:49,735 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 13 endpoint(s) beneath base path '/actuator'
+2022-06-28 17:32:50,255 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [main] Adding welcome page: class path resource [static/index.html]
+2022-06-28 17:32:50,530 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-7777"]
+2022-06-28 17:32:50,573 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 7777 (http) with context path ''
+2022-06-28 17:32:51,064 INFO org.springframework.boot.StartupInfoLogger [main] Started HelloApplication in 6.658 seconds (JVM running for 7.462)
+2022-06-28 17:33:01,540 INFO org.apache.juli.logging.DirectJDKLog [http-nio-7777-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-28 17:33:01,541 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7777-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-06-28 17:33:01,548 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7777-exec-1] Completed initialization in 6 ms
+2022-06-28 17:33:01,565 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-1] LogFilter: URI-/
+2022-06-28 17:33:01,566 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-1] LogFilter: URL-http://localhost:7777/
+2022-06-28 17:33:01,567 INFO demo.sprintbootweb.ClientFilter [http-nio-7777-exec-1] LogFilter: clientHost-null
+2022-06-28 17:33:05,725 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-2] LogFilter: URI-/spring-boot-demo/club/get-all
+2022-06-28 17:33:05,726 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-2] LogFilter: URL-http://localhost:7777/spring-boot-demo/club/get-all
+2022-06-28 17:33:05,727 INFO demo.sprintbootweb.ClientFilter [http-nio-7777-exec-2] LogFilter: clientHost-null
+2022-06-28 17:33:28,812 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-3] LogFilter: URI-/spring-boot-demo/club/get-all
+2022-06-28 17:33:28,813 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-3] LogFilter: URL-http://localhost:7777/spring-boot-demo/club/get-all
+2022-06-28 17:33:28,814 INFO demo.sprintbootweb.ClientFilter [http-nio-7777-exec-3] LogFilter: clientHost-null
+2022-06-28 17:33:59,316 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-4] LogFilter: URI-/
+2022-06-28 17:33:59,317 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-4] LogFilter: URL-http://localhost:7777/
+2022-06-28 17:33:59,317 INFO demo.sprintbootweb.ClientFilter [http-nio-7777-exec-4] LogFilter: clientHost-null
+2022-06-28 17:34:02,399 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-6] LogFilter: URI-/spring-boot-demo/club/register-put
+2022-06-28 17:34:02,400 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-6] LogFilter: URL-http://localhost:7777/spring-boot-demo/club/register-put
+2022-06-28 17:34:02,402 INFO demo.sprintbootweb.ClientFilter [http-nio-7777-exec-6] LogFilter: clientHost-null
+2022-06-28 17:34:02,439 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-8] LogFilter: URI-/
+2022-06-28 17:34:02,439 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-8] LogFilter: URL-http://localhost:7777/
+2022-06-28 17:34:02,439 INFO demo.sprintbootweb.ClientFilter [http-nio-7777-exec-8] LogFilter: clientHost-null
+2022-06-28 17:34:06,008 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-9] LogFilter: URI-/spring-boot-demo/club/get-all
+2022-06-28 17:34:06,009 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-9] LogFilter: URL-http://localhost:7777/spring-boot-demo/club/get-all
+2022-06-28 17:34:06,012 INFO demo.sprintbootweb.ClientFilter [http-nio-7777-exec-9] LogFilter: clientHost-null
+2022-06-28 17:34:26,437 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-7] LogFilter: URI-/spring-boot-demo/club/get-all
+2022-06-28 17:34:26,438 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-7] LogFilter: URL-http://localhost:7777/spring-boot-demo/club/get-all
+2022-06-28 17:34:26,439 INFO demo.sprintbootweb.ClientFilter [http-nio-7777-exec-7] LogFilter: clientHost-null
+2022-06-28 17:34:48,665 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-10] LogFilter: URI-/spring-boot-demo/club/register-put
+2022-06-28 17:34:48,666 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-10] LogFilter: URL-http://localhost:7777/spring-boot-demo/club/register-put
+2022-06-28 17:34:48,667 INFO demo.sprintbootweb.ClientFilter [http-nio-7777-exec-10] LogFilter: clientHost-null
+2022-06-28 17:35:29,052 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-2] LogFilter: URI-/spring-boot-demo/club/get-all
+2022-06-28 17:35:29,053 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-2] LogFilter: URL-http://localhost:7777/spring-boot-demo/club/get-all
+2022-06-28 17:35:29,054 INFO demo.sprintbootweb.ClientFilter [http-nio-7777-exec-2] LogFilter: clientHost-null
+2022-06-28 17:36:16,877 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-3] LogFilter: URI-/spring-boot-demo/club/get-all
+2022-06-28 17:36:16,878 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-3] LogFilter: URL-http://localhost:7777/spring-boot-demo/club/get-all
+2022-06-28 17:36:16,880 INFO demo.sprintbootweb.ClientFilter [http-nio-7777-exec-3] LogFilter: clientHost-null
+2022-06-28 17:36:26,197 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-4] LogFilter: URI-/club/get-all
+2022-06-28 17:36:26,197 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-4] LogFilter: URL-http://localhost:7777/club/get-all
+2022-06-28 17:36:26,198 INFO demo.sprintbootweb.ClientFilter [http-nio-7777-exec-4] LogFilter: clientHost-null
+2022-06-28 17:38:08,228 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-6] LogFilter: URI-/spring-boot-demo/club/get-all
+2022-06-28 17:38:08,229 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-6] LogFilter: URL-http://localhost:7777/spring-boot-demo/club/get-all
+2022-06-28 17:38:08,230 INFO demo.sprintbootweb.ClientFilter [http-nio-7777-exec-6] LogFilter: clientHost-null
+2022-06-28 17:41:43,762 INFO org.springframework.boot.StartupInfoLogger [main] Starting HelloApplication using Java 11.0.3 on XuComputer with PID 16444 (G:\GITHub\XuRepo\demo-springboot-web\target\classes started by jeffrey in G:\GITHub\XuRepo\demo-springboot-web)
+2022-06-28 17:41:43,767 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-28 17:41:46,852 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 7777 (http)
+2022-06-28 17:41:46,874 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-7777"]
+2022-06-28 17:41:46,875 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-06-28 17:41:46,880 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-06-28 17:41:47,058 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-06-28 17:41:47,060 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3165 ms
+2022-06-28 17:41:48,065 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 13 endpoint(s) beneath base path '/actuator'
+2022-06-28 17:41:48,566 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [main] Adding welcome page: class path resource [static/index.html]
+2022-06-28 17:41:48,883 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-7777"]
+2022-06-28 17:41:48,952 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 7777 (http) with context path '/spring-boot-demo'
+2022-06-28 17:41:49,175 INFO org.springframework.boot.StartupInfoLogger [main] Started HelloApplication in 6.361 seconds (JVM running for 7.005)
+2022-06-28 17:41:54,703 INFO org.apache.juli.logging.DirectJDKLog [http-nio-7777-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-28 17:41:54,705 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7777-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-06-28 17:41:54,707 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7777-exec-1] Completed initialization in 2 ms
+2022-06-28 17:41:54,724 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-1] LogFilter: URI-/spring-boot-demo/club/get-all
+2022-06-28 17:41:54,726 INFO demo.sprintbootweb.LogFilter [http-nio-7777-exec-1] LogFilter: URL-http://localhost:7777/spring-boot-demo/club/get-all
+2022-06-28 17:41:54,727 INFO demo.sprintbootweb.ClientFilter [http-nio-7777-exec-1] LogFilter: clientHost-null

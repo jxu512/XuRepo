@@ -15,7 +15,15 @@ public class ConfigProxyFactoryBean {
     private Dog dog;
 
     @Bean
-    @Autowired
+    public Dog getDogBean() {
+        return new Dog();
+    }
+
+    @Bean(name="dogAdvise")
+    public DogAdvise getDogAdviseBean() {
+        return new DogAdvise();
+    }
+    @Bean
     public ProxyFactoryBean getProxyFactoryBean() throws ClassNotFoundException {
         ProxyFactoryBean proxyFactoryBean = new ProxyFactoryBean();
         proxyFactoryBean.setProxyInterfaces(new Class[] {Animal.class});

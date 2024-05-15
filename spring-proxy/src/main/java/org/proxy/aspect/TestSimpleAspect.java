@@ -1,5 +1,6 @@
-package org.proxy.annotation;
+package org.proxy.aspect;
 
+import org.proxy.annotation.ConfigProxyFactoryBean;
 import org.proxy.common.Animal;
 import org.proxy.common.ConfigApp;
 import org.springframework.aop.framework.ProxyFactoryBean;
@@ -8,13 +9,13 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class TestSimpleProxy {
+public class TestSimpleAspect {
 
     @Autowired
     private ProxyFactoryBean proxyFactoryBean;
 
     public static void main(String[] args) {
-        new TestSimpleProxy().testProxy();
+        new TestSimpleAspect().testProxy();
     }
 
     private void testProxy() {

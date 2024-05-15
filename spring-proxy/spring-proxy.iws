@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="95a1ccd9-1424-40c9-a097-016ecf5bf482" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Coding/src/demos/companies/ubs/LongestZerosInNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coding/src/demos/companies/ubs/SequenceFromThreads.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coding/src/demos/dummy/TestFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coding/src/demos/dynamicprogramming/NthStair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coding/src/demos/hackerrank/NoPrefixSetTrie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coding/src/demos/hackerrank/data/NoPrefixSet.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coding/src/demos/hackerrank/data/noPrefixSet-1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coding/src/demos/hackerrank/data/noPrefixSet-2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coding/src/demos/stream/StreamVsDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../Coding/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding/bin/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding/src/demos/barclays/BalancingTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Coding/src/demos/companies/barclays/BalancingTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding/src/demos/barclays/BalancingTreeDSW.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Coding/src/demos/companies/barclays/BalancingTreeDSW.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding/src/demos/barclays/Barclays.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Coding/src/demos/companies/barclays/Barclays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding/src/demos/barclays/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Coding/src/demos/companies/barclays/ConnectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding/src/demos/barclays/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Coding/src/demos/companies/barclays/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding/src/demos/barclays/OSFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Coding/src/demos/companies/barclays/OSFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding/src/demos/barclays/OrderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Coding/src/demos/companies/barclays/OrderImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding/src/demos/barclays/Ordering.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Coding/src/demos/companies/barclays/Ordering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding/src/demos/barclays/ReadWriteLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Coding/src/demos/companies/barclays/ReadWriteLock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding/src/demos/barclays/TestOSFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Coding/src/demos/companies/barclays/TestOSFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding/src/demos/coding/StreamBasics.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Coding/src/demos/stream/StreamBasics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding/src/demos/general/BasicStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Coding/src/demos/stream/BasicStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding/src/demos/jpm/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Coding/src/demos/companies/jpm/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding/src/demos/nomura/SecurityManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Coding/src/demos/companies/nomura/SecurityManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-springboot-web/src/main/java/demo/sprintbootweb/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo-springboot-web/src/main/java/demo/sprintbootweb/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-springboot-web/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../demo-springboot-web/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelliJ/Springboot/Springboot/src/main/java/demo/springboot/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../intelliJ/Springboot/Springboot/src/main/java/demo/springboot/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelliJ/Springboot/Springboot/target/classes/demo/springboot/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../intelliJ/Springboot/Springboot/target/classes/demo/springboot/HelloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelliJ/Springboot/Springboot/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../intelliJ/Springboot/Springboot/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelliJ/Springboot/Springboot/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../intelliJ/Springboot/Springboot/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proxy/annotation/ConfigProxyFactoryBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proxy/annotation/ConfigProxyFactoryBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proxy/annotation/TestSimpleProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proxy/annotation/TestSimpleProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proxy/aspect/TestSimpleAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proxy/aspect/TestSimpleAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proxy/common/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proxy/common/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proxy/common/ConfigApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proxy/common/ConfigApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proxy/common/DogAdvise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proxy/common/DogAdvise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proxy/programatic/TestSimpleProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proxy/programatic/TestSimpleProxyProgramatic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../websocket/REAMME" beforeDir="false" afterPath="$PROJECT_DIR$/../websocket/REAMME" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../websocket/src/main/webapp/ws.html" beforeDir="false" afterPath="$PROJECT_DIR$/../websocket/src/main/webapp/ws.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2gKbAwDjy3Ikm0Vd9J121DNJLcl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="TestSimpleProxy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.proxy.annotation.TestSimpleProxy" />
+      <module name="spring-proxy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.proxy.annotation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TestSimpleProxy" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="95a1ccd9-1424-40c9-a097-016ecf5bf482" name="Changes" comment="" />
+      <created>1715449076889</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715449076889</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/proxy/common/DogAdvise.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/proxy/common/Dog.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

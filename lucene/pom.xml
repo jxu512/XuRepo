@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>demo.lucene</groupId>
+  <artifactId>lucene</artifactId>
+  <version>1.0</version>
+  <name>lucent-demo</name>
+  <description>Lucene search demo</description>
+
+  <dependencies>
+	<!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-core -->
+	<dependency>
+	    <groupId>org.apache.lucene</groupId>
+	    <artifactId>lucene-core</artifactId>
+	    <version>8.11.2</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-queries -->
+	<dependency>
+	    <groupId>org.apache.lucene</groupId>
+	    <artifactId>lucene-queries</artifactId>
+	    <version>8.11.2</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-queryparser -->
+	<dependency>
+	    <groupId>org.apache.lucene</groupId>
+	    <artifactId>lucene-queryparser</artifactId>
+	    <version>8.11.2</version>
+	</dependency>
+
+  </dependencies>
+  
+</project>

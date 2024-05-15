@@ -1,1 +1,10 @@
 /.metadata/
+angular/.project
+.idea
+out
+target
+.settings
+.classpath
+.project
+.gitignore
+*.iml

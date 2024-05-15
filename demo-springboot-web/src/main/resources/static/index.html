@@ -64,26 +64,26 @@ Dev club:
 <!-- HTML does not support put, below will fail -->
 <form modelAttribute="userForm" action=/club/register method="put">
 <input type="hidden" name="_method" value="put" />
-<label>Name:</label><input id=nameField name="name" type=text size=8 value="Jasmine" />
-<label>points:</label><input id=nameField name="points" type=text size=6 value="200" />
+<label>Name:</label><input id=nameField1 name="name" type=text size=8 value="Jasmine" />
+<label>points:</label><input id=pointsField1 name="points" type=text size=6 value="200" />
 <input type=Submit value="Register(PUT)"/>
 </form>
 <!-- HTML POST is OK -->
 <form modelAttribute="userForm" action=/club/register method="post">
-<label>Name:</label><input id=nameField name="name" type=text size=8 value="Jasmine" />
-<label>points:</label><input id=nameField name="points" type=text size=6 value="200" />
+<label>Name:</label><input id=nameField2 name="name" type=text size=8 value="Jasmine" />
+<label>points:</label><input id=pointsField2 name="points" type=text size=6 value="200" />
 <input type=Submit value="Register(POST)"/>
 </form>
 
 <!-- Ajax supporst put -->
 <form onsubmit=registerClub(this) >
-<label>Name:</label><input id=nameField name="name" type=text size=8 value="Jasmine" />
-<label>points:</label><input id=pointsField name="points" type=text size=6 value="200" />
+<label>Name:</label><input id=nameField3 name="name" type=text size=8 value="Jasmine" />
+<label>points:</label><input id=pointsField3 name="points" type=text size=6 value="200" />
 <input type=submit value="Reg (Ajax Put)"></input>
 </form>
 <form onsubmit=addPoints(this) >
-<label>Name:</label><input id=nameField name="name" type=text size=8 value="Jasmine" />
-<label>points:</label><input id=pointsField name="points" type=text size=6 value="200" />
+<label>Name:</label><input id=nameField4 name="name" type=text size=8 value="Jasmine" />
+<label>points:</label><input id=pointsField4 name="points" type=text size=6 value="200" />
 <input type=submit value="Add points (Ajax PATCH"></input>
 </form>
 

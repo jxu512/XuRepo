@@ -7,7 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+import java.util.HashMap;
+
 public class TestSimpleProxy {
 
     @Autowired
@@ -19,11 +20,12 @@ public class TestSimpleProxy {
 
     private void testProxy() {
         try (AnnotationConfigApplicationContext appContext
-                     = new AnnotationConfigApplicationContext(ConfigProxyFactoryBean.class, ConfigApp.class)) {
+                     = new AnnotationConfigApplicationContext(ConfigProxyFactoryBean.class)) {
             proxyFactoryBean = appContext.getBean(ProxyFactoryBean.class);
         }
         Animal dog = (Animal) proxyFactoryBean.getObject();
         dog.sound();
         dog.move();
+
     }
 }
