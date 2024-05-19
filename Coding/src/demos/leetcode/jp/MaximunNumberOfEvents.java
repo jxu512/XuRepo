@@ -31,6 +31,30 @@ public class MaximunNumberOfEvents {
         return ans;
     }
 
+    // This is super fast
+    public int maxEvents1(int[][] events) {
+        Arrays.sort(events, (a, b) -> a[1] - b[1]);
+        int n = events.length, ans = 0;
+        int max = events[n-1][1];
+
+        int[] arr1 = new int[max + 1];
+        int[] arr2 = new int[max + 1];
+        for (int i = 1; i <= max; i++) arr1[i] = i;
+        for (int i = 0; i < n; i++) {
+            for (int j = events[i][0]; j <= events[i][1]; j++) {
+                if (arr2[j] != 0)
+                    j = arr2[j];
+                else if (arr1[j] != -1) {
+                    ans++;
+                    arr2[events[i][0]] = arr1[j];
+                    arr1[j] = -1;
+                    break;
+                }
+            }
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         int[][] events = { {1,3},{1,3},{1,3},{3,4} };
         System.out.println(maxEvents(events));

@@ -9,6 +9,7 @@ public class MaxSubarray {
         int max = currentMax;
 
         for (int i=1;i<nums.length;i++) {
+            // If nums[i] > (currentMax+num[i], start new sequence
             currentMax = Math.max(currentMax + nums[i], nums[i]);
             max = Math.max(max, currentMax);
         }
@@ -32,6 +33,6 @@ public class MaxSubarray {
 
     public static void main(String[] args) {
         int[] a = {-6,-2,-3,-4,-5};
-        maxSubArray1(a);
+        System.out.println(maxSubArray1(a));
     }
 }
