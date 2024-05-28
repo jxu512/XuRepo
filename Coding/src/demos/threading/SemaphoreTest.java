@@ -3,12 +3,12 @@
 */
 package demos.threading;
 
-public class Semaphore {
+public class SemaphoreTest {
 
 	int limits=5;
 	int used=0;
 	
-	public Semaphore(int capacity) {
+	public SemaphoreTest(int capacity) {
 		limits = capacity;
 	}
 	public synchronized int available() {
@@ -43,7 +43,7 @@ public class Semaphore {
 	}
 	
 	public static void main(String[] args){
-		Semaphore s = new Semaphore(5);
+		SemaphoreTest s = new SemaphoreTest(5);
 		
 		Thread[] t = new Thread[15];
 		for(int i=0;i<t.length;i++) {

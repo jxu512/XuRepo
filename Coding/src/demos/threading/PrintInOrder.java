@@ -5,9 +5,9 @@ https://leetcode.com/problems/print-in-order/
 package demos.threading;
 
 class PrintInOrder {
-    Semaphore s1 = new Semaphore(1);
-    Semaphore s2 = new Semaphore(0);
-    Semaphore s3 = new Semaphore(0);
+    SemaphoreTest s1 = new SemaphoreTest(1);
+    SemaphoreTest s2 = new SemaphoreTest(0);
+    SemaphoreTest s3 = new SemaphoreTest(0);
 
     public PrintInOrder() {
 

@@ -23,9 +23,9 @@ public class ThreadsOneAfterAnother {
 
     // all threads start but execute one after another, controlled by one permit being passed around
     private void test2(int n) {
-        Semaphore[] semaphores = new Semaphore[n];
-        semaphores[0] = new Semaphore(1);
-        for (int i=1;i<n;i++) semaphores[i] = new Semaphore(0);
+        SemaphoreTest[] semaphores = new SemaphoreTest[n];
+        semaphores[0] = new SemaphoreTest(1);
+        for (int i=1;i<n;i++) semaphores[i] = new SemaphoreTest(0);
         for (int i=0;i<n;i++) (new Thread(new Runnable_2(i,semaphores))).start();
 
     }
@@ -43,9 +43,9 @@ class Runnable_1 implements Runnable {
 }
 class Runnable_2 implements Runnable {
     int id;
-    Semaphore[] semaphores;
+    SemaphoreTest[] semaphores;
 
-    public Runnable_2(int id, Semaphore[] semaphores) {
+    public Runnable_2(int id, SemaphoreTest[] semaphores) {
         this.id = id;
         this.semaphores = semaphores;
     }

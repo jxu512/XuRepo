@@ -1,22 +1,11 @@
-package demos.simonmarkets;
+package demos.companies.simonmarkets;
 
-import java.io.*;
-import java.math.*;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.security.*;
-import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
-import java.util.stream.*;
 
 import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
-
 
 
 class RestAPIFoodOutlets {

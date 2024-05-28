@@ -20,7 +20,7 @@ class Parent implements Runnable {
 		new Thread(new Child(Thread.currentThread())).start();
 		System.out.println("parent after: "+Thread.activeCount());
 	
-		for(int i=0;i<10;i++) {
+		for(int i=0;i<3;i++) {
 			System.out.print("Parent..."+i);
 			try { Thread.sleep(1000); }
 			catch(InterruptedException e) {}
@@ -44,7 +44,7 @@ class Child implements Runnable {
 		catch(InterruptedException e) {}
 		System.out.println(p.getName()+" ended");
 		
-		for(int i=0;i<10;i++) {
+		for(int i=0;i<3;i++) {
 			try { Thread.sleep(1000); }
 			catch(InterruptedException e) {}
 			System.out.format("child: %d, ",Thread.activeCount());
