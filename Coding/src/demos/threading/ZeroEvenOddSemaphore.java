@@ -5,10 +5,10 @@ package demos.threading;
 
 import java.util.function.IntConsumer;
 
-class ZeroEvenOddSemaphore {
-    private final Semaphore zero = new Semaphore(1);
-    private final Semaphore even = new Semaphore(0);
-    private final Semaphore odd = new Semaphore(0);
+public class ZeroEvenOddSemaphore {
+    private final SemaphoreTest zero = new SemaphoreTest(1);
+    private final SemaphoreTest even = new SemaphoreTest(0);
+    private final SemaphoreTest odd = new SemaphoreTest(0);
     final int n;
 
     public static void main(String[] args) {
