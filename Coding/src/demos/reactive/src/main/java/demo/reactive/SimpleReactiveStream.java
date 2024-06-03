@@ -13,17 +13,24 @@ public class SimpleReactiveStream {
         FruitSubscriber subscriber = new FruitSubscriber<>();
         publisher.subscribe(subscriber);
 
-        Arrays.asList(fruits).stream().forEach(fruit->publisher.submit(fruit));
+        int n = 1000;
+        for (int i=0;i<n;i++)
+            Arrays.asList(fruits).stream().forEach(publisher::submit);
+        System.out.println("\nPublished: " + fruits.length * n);
         publisher.close();
 
         // Wait for subscriber to complete
-        while (!subscriber.isCompleted()) Thread.sleep(1000);
+        while (!subscriber.isCompleted()) {
+            System.out.println("Waiting for consumer to complete...");
+            Thread.sleep(100);
+        }
     }
 }
 
 class FruitSubscriber<String> implements Flow.Subscriber<String> {
     private Flow.Subscription subscription;
     private boolean completed = false;
+    private int count;
 
     @Override
     public void onSubscribe(Flow.Subscription subscription) {
@@ -34,8 +41,9 @@ class FruitSubscriber<String> implements Flow.Subscriber<String> {
 
     @Override
     public void onNext(Object item) {
-        System.out.println("Processing " + item);
+        System.out.print(item + ",");
         this.subscription.request(1);
+        count++;
     }
 
     @Override
@@ -45,7 +53,7 @@ class FruitSubscriber<String> implements Flow.Subscriber<String> {
 
     @Override
     public void onComplete() {
-        System.out.println("Completed");
+        System.out.println("Completed: " + count);
         completed = true;
     }
 
