@@ -21,6 +21,15 @@ create table Company(id, name, country) as
 )
 -- ";" needed for create table but not for with clause
 ;
+/*
+Oracle adds an implicit group by for all the columns not in the pivot clause. Use an inline view that selects just the columns you want in the results
+*/
+-- this not work
+select * from  Company
+pivot ( count(name) for Country in ( 'USA', 'UK', 'Germany', 'Sweden', 'China', 'Japan' ) )
+;
+
+-- this works
 select * from
 ( select name, country from Company )
 pivot ( count(name) for Country in ( 'USA', 'UK', 'Germany', 'Sweden', 'China', 'Japan' ) )

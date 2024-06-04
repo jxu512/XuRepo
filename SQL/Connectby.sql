@@ -23,9 +23,18 @@ create table Employee(id, name, manager_id) as
 )
 -- ";" needed for create table but not for with clause
 ;
+-- Complete report hierarchy for everyone
+-- parent id = child manager_id
 select level, id, lpad(name,10,'.'), manager_id, prior name "Manager", SYS_CONNECT_BY_PATH(name, '/') "Path"
 from Employee
 start with id=1
-connect by prior id =  manager_id
+connect by prior id = manager_id
+order by level, id
+;
+-- Immediate manager for everyone
+select level, id, lpad(name,10,'.'), manager_id, prior name "Manager", SYS_CONNECT_BY_PATH(name, '/') "Path"
+from Employee
+where level=2
+connect by prior id= manager_id
 order by level, id
 ;
