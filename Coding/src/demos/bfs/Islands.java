@@ -32,58 +32,59 @@ import java.util.Queue;
 
 class Islands {
     public int numIslands(char[][] grid) {
-        
-        Queue<int[]> queue=new LinkedList<int[]>();
-        int w=grid.length;
-        int h=grid[0].length;
-        int numOfIslands=0;
-        for(int i=0;i<w;i++){
-            for(int j=0;j<h;j++){
-                if(grid[i][j]=='1') {
-                    addToQueue(i,j,grid,queue);
-                    findIsland(grid,queue);
-                    numOfIslands ++;
-                }
+        int ans = 0;
+
+        for (int i=0;i<grid.length;i++) {
+            for (int j=0;j<grid[0].length;j++) {
+                if (grid[i][j] != '1') continue;
+                markRecursion(i,j,grid);
+                ans ++;
             }
         }
-        return numOfIslands;
+        return ans;
     }
-    
-    private int findIsland(char[][] grid, Queue<int[]>queue) {
-        
-        while(!queue.isEmpty()) {
-            int[] arr1 = queue.poll();
-            int i=arr1[0];
-            int j=arr1[1];
-            if(j-1>=0 && grid[i][j-1]=='1') {
-            	queue.offer(new int[] {i,j-1}); grid[i][j-1]='2';
+
+    private void markRecursion(int i, int j, char[][] grid) {
+        if (grid[i][j] != '1') return;
+        grid[i][j] = '2';       // Mark first to avoid repeating
+
+        if (i>0) markRecursion(i-1, j, grid);
+        if (j>0) markRecursion(i, j-1, grid);
+        if (i<grid.length-1) markRecursion(i+1, j, grid);
+        if (j<grid[0].length-1) markRecursion(i, j+1, grid);
+    }
+    private void markQueue(int i, int j, char[][] grid) {
+        Queue<int[]> queue = new LinkedList<>();
+        queue.offer(new int[] {i,j});
+        grid[i][j] = '2';
+        while (!queue.isEmpty()) {
+            System.out.println("queue: " + queue.size());
+            int[] c = queue.poll();
+            int m=c[0], n=c[1];
+            if (m>0 && grid[m-1][n] == '1') {
+                queue.offer(new int[]{m - 1, n});
+                grid[m-1][n] = '2';     // Mark first to avoid repeating
             }
-            if(i-1>=0 && grid[i-1][j]=='1') {
-            	queue.offer(new int[] {i-1,j}); grid[i-1][j]='2';
+            if (n>0 && grid[m][n-1] == '1') {
+                queue.offer(new int[]{m, n - 1});
+                grid[m][n-1] = '2';
             }
-            if(j+1<grid[0].length && grid[i][j+1]=='1') {
-            	queue.offer(new int[] {i,j+1}); grid[i][j+1]='2';
+            if (m<grid.length-1 && grid[m+1][n] == '1') {
+                queue.offer(new int[]{m + 1, n});
+                grid[m+1][n] = '2';
             }
-            if(i+1<grid.length && grid[i+1][j]=='1') {
-            	queue.offer(new int[] {i+1,j}); grid[i+1][j]='2';
+            if (n<grid[0].length-1 && grid[m][n+1] == '1') {
+                queue.offer(new int[]{m, n + 1});
+                grid[m][n+1] = '2';
             }
         }
-        return 1;
-    }
-    private void addToQueue(int i,int j,char[][] grid, Queue<int[]> queue) {
-        int arr[]={i,j};
-        queue.add(arr);
-        grid[i][j]='2';
     }
     
     public static void main(String[] args) {
     	Islands islands = new Islands();
-    	char[][] grid=  {
-    			{'1','0','1'},
-    			{'1','1','1'},
-    			{'1','0','1'}
-    	};
-    	int num = islands.numIslands(grid);
+        //char[][] grid=  { {'1','0','1'}, {'1','1','1'}, {'1','0','1'} };
+        char[][] grid= {{'1','1','1','1','1','0','1','1','1','1','1','1','1','1','1','0','1','0','1','1'},{'0','1','1','1','1','1','1','1','1','1','1','1','1','0','1','1','1','1','1','0'},{'1','0','1','1','1','0','0','1','1','0','1','1','1','1','1','1','1','1','1','1'},{'1','1','1','1','0','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1'},{'1','0','0','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1'},{'1','0','1','1','1','1','1','1','0','1','1','1','0','1','1','1','0','1','1','1'},{'0','1','1','1','1','1','1','1','1','1','1','1','0','1','1','0','1','1','1','1'},{'1','1','1','1','1','1','1','1','1','1','1','1','0','1','1','1','1','0','1','1'},{'1','1','1','1','1','1','1','1','1','1','0','1','1','1','1','1','1','1','1','1'},{'1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1'},{'0','1','1','1','1','1','1','1','0','1','1','1','1','1','1','1','1','1','1','1'},{'1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1'},{'1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1'},{'1','1','1','1','1','0','1','1','1','1','1','1','1','0','1','1','1','1','1','1'},{'1','0','1','1','1','1','1','0','1','1','1','0','1','1','1','1','0','1','1','1'},{'1','1','1','1','1','1','1','1','1','1','1','1','0','1','1','1','1','1','1','0'},{'1','1','1','1','1','1','1','1','1','1','1','1','1','0','1','1','1','1','0','0'},{'1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1'},{'1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1'},{'1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1'}};
+        int num = islands.numIslands(grid);
     	System.out.println("Number of Islands:"+num);
     }
 }

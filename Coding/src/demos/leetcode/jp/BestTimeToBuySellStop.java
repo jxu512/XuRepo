@@ -6,9 +6,9 @@ public class BestTimeToBuySellStop {
 
         int len = prices.length;
         int profit = 0;
-        int minPx = Integer.MAX_VALUE;
+        int minPx = prices[0];
 
-        for (int i=0;i<len;i++) {
+        for (int i=1;i<len;i++) {
             if (minPx > prices[i]) minPx = prices[i];
             else {
                 int p = prices[i]-minPx;
@@ -18,7 +18,7 @@ public class BestTimeToBuySellStop {
         return profit;
     }
 
-    // This is slower but givrs max profit for everyday
+    // This is slower but gives max profit for everyday
     public int maxProfit1(int[] prices) {
 
         int len = prices.length;
