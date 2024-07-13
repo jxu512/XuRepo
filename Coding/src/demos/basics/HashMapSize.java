@@ -16,5 +16,10 @@ public class HashMapSize {
         int n = 32;
         int hash = 532;
         System.out.format("(n-1)&hash=%d, hash%%n=%d\n", (n-1)&hash, hash%n);
+
+        Map<Integer, Integer> map = new HashMap<>(15);
+        for (int i=0;i<15;i++) {
+            map.put(i, i);
+        }
     }
 }
