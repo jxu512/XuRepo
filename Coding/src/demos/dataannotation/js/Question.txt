@@ -1,0 +1,39 @@
+Given m x n matrix. element matrix[i][j] can be,
+1) blank
+2) * as source, only one source in the matrix
+3) pipe: '═', '║', '╔', '╗', '╚', '╝', '╠', '╣', '╦', '╩'
+4) capital letters A-Z: sinks
+
+Two pipes are connected if they have opening facing each other, such as '╔' and '╗' are connected, but '╔', '╚' are not.
+source (*) and sinks (A-Z) can connect to any pipes.
+Write function in Python or JavaScript, start from source, find all sinks that can be reached, and return all sinks concatenated as a string.
+
+matrix elements are specified in a txt file, such as
+* 0 2
+C 1 0
+╠ 1 1
+╣ 1 2
+═ 2 1
+╚ 3 0
+╝ 3 1
+╔ 3 2
+═ 4 0
+═ 4 2
+B 5 0
+A 5 2
+
+where the first char is element type, 2nd and 3rd are x and y coordinates in the matrix. The above input represents,
+
+2  * ╣   ╔ ═ A
+1    ╠ ═ ╝
+0    C   ╚ ═ B
+
+   0 1 2 3 4 5
+
+Starting from *, A and C can be reached, but B can't. So, output AC.
+
+
+test files: coding_qual_input.txt
+js: sourceSink.js
+
+command: node sourceSink.js

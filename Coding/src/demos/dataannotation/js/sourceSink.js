@@ -1,87 +1,85 @@
-/* pipes: '═', '║', '╔', '╗', '╚', '╝', '╠', '╣', '╦', '╩' */
+// JavaScript implementation, run with node
+
 const fs = require('fs');
 let nodes = [];
 let cols = -1, rows = -1;
-let answer = '';
 
 function findConnectedSinks (file) {
     nodes = loadNodesFromFile(file);
-    let grid = createGrid();
-    bfs(grid);
-    console.log(answer);
-    return answer;
+    let matrix = createMatrix();
+    return bfsSearch(matrix);
 }
 
-function bfs(grid) {
+function bfsSearch(matrix) {
     let queue = [];
-    let source = getSource(grid);
+    let answer = '';
+    let source = getSource(matrix);
     queue.push(source);
     while (queue.length != 0) {
         let node = queue.shift();
         let r = node.row;
         let c = node.col;
-        if (grid[r][c] >= 'A' && grid[r][c] <= 'Z') {
-            answer += grid[r][c];
-            //console.log('Answer: ' + answer);
+        if (matrix[r][c] >= 'A' && matrix[r][c] <= 'Z') {
+            answer += matrix[r][c];
         }
-        let connected = getConnected(grid, r, c);
-        connected.forEach(node => { queue.push(node)});
-        //console.log('queue size: ' + queue.length);
-        grid[r][c] = ' ';           // Mark as processed
+        let neighbors = getNeighbors(matrix, r, c);
+        neighbors.forEach(node => { queue.push(node)});
+        matrix[r][c] = ' ';           // Mark as processed
     }
+    console.log("Reachable sinks: " + answer);
+    return answer;
 }
-function getConnected(grid, r, c) {
+function getNeighbors(matrix, r, c) {
     let node = new Object();
-    let connected = [];
-    if (grid[r][c] == ' ') return connected;
+    let neighbors = [];
+    if (matrix[r][c] == ' ') return neighbors;
 
-    if (isLeftConnected(grid, r, c)) connected.push({row: r, col: c-1})
-    if (isRightConnected(grid, r, c)) connected.push({row: r, col: c+1})
-    if (isUpConnected(grid, r, c)) connected.push({row: r+1, col: c})
-    if (isDownConnected(grid, r, c)) connected.push({row: r-1, col: c})
+    if (isLeftConnected(matrix, r, c)) neighbors.push({row: r, col: c-1})
+    if (isRightConnected(matrix, r, c)) neighbors.push({row: r, col: c+1})
+    if (isUpConnected(matrix, r, c)) neighbors.push({row: r+1, col: c})
+    if (isDownConnected(matrix, r, c)) neighbors.push({row: r-1, col: c})
 
-    return connected;
+    return neighbors;
 }
 
-function isLeftConnected(grid, r, c) {
+function isLeftConnected(matrix, r, c) {
     if (c < 1) return false;
-    let ch = grid[r][c];
-    let left = grid[r][c-1];
+    let ch = matrix[r][c];
+    let left = matrix[r][c-1];
     if ((['*', '═', '╗', '╝', '╣', '╦', '╩'].includes(ch) || (ch >= 'A' && ch <= 'Z'))
         && (['═', '╔', '╚', '╠', '╦', '╩'].includes(left) || (left >= 'A' && left <= 'Z'))) return true;
 }
-function isRightConnected(grid, r, c) {
+function isRightConnected(matrix, r, c) {
     if (c >= cols-1) return false;
-    let ch = grid[r][c];
-    let right = grid[r][c+1];
+    let ch = matrix[r][c];
+    let right = matrix[r][c+1];
     if ( (['*', '═', '╔', '╚', '╠', '╦', '╩'].includes(ch) || (ch >= 'A' && ch <= 'Z'))
         && (['═', '╗', '╝', '╣', '╦', '╩'].includes(right) || (right >= 'A' && right <= 'Z'))) return true;
 }
-function isUpConnected(grid, r, c) {
+function isUpConnected(matrix, r, c) {
     if (r >= rows-1) return false;
-    let ch = grid[r][c];
-    let up = grid[r+1][c];
+    let ch = matrix[r][c];
+    let up = matrix[r+1][c];
     if ( (['*', '║', '╚', '╝', '╠', '╣', '╩'].includes(ch) || (ch >= 'A' && ch <= 'Z'))
         && (['║', '╔', '╗', '╠', '╣', '╦'].includes(up) || (up >= 'A' && up <= 'Z'))) return true;
 }
-function isDownConnected(grid, r, c) {
+function isDownConnected(matrix, r, c) {
     if (r < 1 ) return false;
-    let ch = grid[r][c];
-    let down = grid[r-1][c];
+    let ch = matrix[r][c];
+    let down = matrix[r-1][c];
     if ( (['*', '║', '╔', '╗', '╠', '╣', '╦'].includes(ch) || (ch >= 'A' && ch <= 'Z'))
         && ([ '║', '╚', '╝', '╠', '╣', '╩'].includes(down) || (down >= 'A' && down <= 'Z'))) return true;
 }
-function getSource(grid) {
+function getSource(matrix) {
     let source = new Object();
     for (let r=0;r<rows;r++) {
         for (let c=0;c<cols;c++) {
-            if (grid[r][c] == '*') {
+            if (matrix[r][c] == '*') {
                 source.row = r;
                 source.col = c;
             }
         }
     }
-    //console.log('Source: (' + source.row + ', ' + source.col + ')');
     return source;
 }
 function loadNodesFromFile (file) {
@@ -100,22 +98,20 @@ function loadNodesFromFile (file) {
     return nodes;
 }
 
-function createGrid() {
+function createMatrix() {
     nodes.forEach(node => {
         if (cols < node.col) cols = node.col;
         if (rows < node.row) rows = node.row;
     });
     cols++;
     rows++;
-    let grid = Array(rows)
-        .fill()
-        .map(() => Array(cols).fill(' '));
+    let matrix = Array(rows).fill().map(() => Array(cols).fill(' '));
 
     nodes.forEach(node => {
-        grid[node.row][node.col] = node.pipe;
+        matrix[node.row][node.col] = node.pipe;
     });
 
-    return grid;
+    return matrix;
 }
 
 findConnectedSinks ('g:/tmp/coding_qual_input.txt');
