@@ -1,4 +1,4 @@
-// Spread operator
+// Spread operator iterable objects
 let students = ['David', 'Jack', 'Jeff'];
 let names = [...students];
 console.log(names);

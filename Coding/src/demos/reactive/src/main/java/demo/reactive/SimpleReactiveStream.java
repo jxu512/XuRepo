@@ -17,7 +17,7 @@ public class SimpleReactiveStream {
         for (int i=0;i<n;i++)
             Arrays.asList(fruits).stream().forEach(publisher::submit);
         System.out.println("\nPublished: " + fruits.length * n);
-        publisher.close();
+        publisher.close();      // Must close so that onComplete will be called
 
         // Wait for subscriber to complete
         while (!subscriber.isCompleted()) {
@@ -36,13 +36,13 @@ class FruitSubscriber<String> implements Flow.Subscriber<String> {
     public void onSubscribe(Flow.Subscription subscription) {
         System.out.println("Subscribed...");
         this.subscription = subscription;
-        this.subscription.request(3);
+        this.subscription.request(5);
     }
 
     @Override
     public void onNext(Object item) {
         System.out.print(item + ",");
-        this.subscription.request(1);
+        subscription.request(1);
         count++;
     }
 

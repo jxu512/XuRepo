@@ -3,15 +3,7 @@ package demos.stream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -33,6 +25,31 @@ public class BasicStream {
 		s.streamIsLazyAndNotReusable();
 		s.parallel();
 		//s.streamOf();
+
+		s.printOneLine();
+	}
+
+	private void printOneLine() {
+		List<List<String>> fruits = new ArrayList<>();
+		fruits.add(List.of("Apple", "Orange"));
+		fruits.add(List.of("Kiwi", "Banana"));
+		fruits.add(List.of("Pear", "Blueberry"));
+
+		fruits.stream().forEach(list->list.forEach(f->System.out.print(f+",")));
+		System.out.println();
+		System.out.println(fruits.stream().reduce("", (a,b)->a+String.join(",",b)+";", (x,y)->""));
+		List<String> list = fruits.stream().reduce(new ArrayList<>(), (a,b)->{a.addAll(b);return a;});
+		list.forEach(fruit->System.out.print(fruit+","));
+
+		Optional<List<String>> optional =
+				fruits.stream().reduce((a,b)->{
+		    		List<String> li = new ArrayList<>();
+					li.addAll(a);
+					li.addAll(b);
+					return li;
+				});
+		System.out.println();
+		optional.get().forEach(fruit->System.out.print(fruit+","));
 	}
 	private void filterMapAggregate() {
 		int sum = entries.stream()
@@ -45,7 +62,7 @@ public class BasicStream {
 		
 		int sum=0;
 		long t1, t2;
-		int len = 1_000_000_000;
+		int len = 1_000;
 		Integer[] array = new Integer[len];
 		Arrays.fill(array, 1);
 		List<Integer> list = Arrays.asList(array);
@@ -54,24 +71,18 @@ public class BasicStream {
 		
 		System.out.println("Loop vs Sequential vs Parallel");
 		
-		try { Thread.sleep(10*1000);}
-		catch(InterruptedException e) {}
 		intSt = list.stream().mapToInt(Integer::intValue);
 		t1 = System.currentTimeMillis();
 		for(int num:list) sum += num;
 		t2 = System.currentTimeMillis();
 		System.out.format("Loop time: %d\n",(t2-t1));
-		try { Thread.sleep(10*1000);}
-		catch(InterruptedException e) {}
-		
+
 		intSt = list.stream().mapToInt(Integer::intValue);
 		t1 = System.currentTimeMillis();
 		sum = intSt.sum();
 		t2 = System.currentTimeMillis();
 		System.out.format("Sequential time: %d\n",(t2-t1));
-		try { Thread.sleep(10*1000);}
-		catch(InterruptedException e) {}
-		
+
 		intSt = list.parallelStream().mapToInt(Integer::intValue);
 		t1 = System.currentTimeMillis();
 		sum = intSt.sum();
