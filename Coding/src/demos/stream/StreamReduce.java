@@ -3,6 +3,7 @@ package demos.stream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 public class StreamReduce {
 
@@ -23,12 +24,13 @@ public class StreamReduce {
         System.out.print("Reduce to string serial: ");
         System.out.println(fruits.stream().reduce("", (a,b)->a+String.join(",",b)+";", (x,y)->null));   // combiner is not used for serial
 
-        System.out.println();
         System.out.print("Reduce to string parallel: ");
         System.out.println(fruits.parallelStream().reduce("", (a,b)->a+String.join(",",b)+";", (x,y)->x + y));  // combiner is needed for parallel
 
+        System.out.print("Flatmap: ");
+        System.out.println(fruits.stream().flatMap(li-> Stream.of(li.toArray(new String[0]))).reduce("", (a,b)->a+b+","));
+
         List<String> list = fruits.stream().reduce(new ArrayList<>(), (a,b)->{a.addAll(b);return a;});
-        System.out.println();
         System.out.print("Reduce to List<>...1: ");
         list.forEach(fruit->System.out.print(fruit+","));
 
@@ -42,5 +44,6 @@ public class StreamReduce {
         System.out.println();
         System.out.print("Reduce to List<>...2: ");
         optional.get().forEach(fruit->System.out.print(fruit+","));
+
     }
 }
