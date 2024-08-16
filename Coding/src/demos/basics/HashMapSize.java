@@ -14,7 +14,7 @@ public class HashMapSize {
         // which is effectly mod (%)
 
         int n = 32;
-        int hash = 532;
+        int hash = 632;
         System.out.format("(n-1)&hash=%d, hash%%n=%d\n", (n-1)&hash, hash%n);
 
         Map<Integer, Integer> map = new HashMap<>(15);

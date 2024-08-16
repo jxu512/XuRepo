@@ -1,0 +1,1 @@
+kubectl get deployments --sort-by='.spec.replicas' -o jsonpath='{.items[?(@.spec.replicas == $.items[*].spec.replicas | max)].metadata.name}' | xargs -I {} kubectl scale deployment {} --replicas=0

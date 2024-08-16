@@ -1,21 +1,25 @@
 package demos.forkjoin;
 
 import java.util.Arrays;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
 
 public class ArraySum {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
         ArraySum arraySum = new ArraySum();
         arraySum.test();
     }
 
-    private void test() {
+    private void test() throws ExecutionException, InterruptedException {
         int[] nums = init();
         System.out.println(Arrays.stream(nums).sum());
         ForkJoinPool pool = ForkJoinPool.commonPool();
-        int sum = pool.invoke(new SumTask(nums));
+        //int sum = pool.invoke(new SumTask(nums));         // invoke, wait and get result
+        SumTask task = new SumTask(nums);
+        pool.execute(task);                 // Async execute, need to get result later
+        int sum = task.get();
         System.out.println(sum);
     }
 

@@ -15,6 +15,6 @@ public class VariableScope {
         System.out.println(val2);
         //int val2 = 8;
     }
-    // Instance variables cab be anywhere, like hoist in JavaScript
+    // Instance variables can be anywhere, like hoist in JavaScript
     int val1 = 6;
 }

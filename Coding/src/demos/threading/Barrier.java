@@ -20,16 +20,16 @@ class Runnable1 implements Runnable {
 	int order=-1;
 	int total=0;
 	CyclicBarrier barrier=null;
-	public Runnable1(int order, int total, CyclicBarrier latch) {
+	public Runnable1(int order, int total, CyclicBarrier barrier) {
 		this.order=order;
 		this.total=total;
-		this.barrier=latch;
+		this.barrier=barrier;
 	}
 	@Override
 	public void run() {
 
 		int l=-1;
-		for(int i=0;i<1000;i++) {
+		for(int i=0;i<5;i++) {
 		
 		  	try {
 				l=barrier.await();
@@ -37,7 +37,7 @@ class Runnable1 implements Runnable {
 				e.printStackTrace();
 			}
 			
-			System.out.format("%d:%3d,", order, i);
+			System.out.format("%d:%d, ", order, i);
 		}
 	}
 	

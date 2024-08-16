@@ -1,0 +1,5 @@
+k apply -f deploy1.yaml
+k scale deploy/myapp --replicas=3
+k get deploy
+kubectl get deployments --no-headers -o custom-columns="NAME:.metadata.name,REPLICAS:.spec.replicas" | sort -k2 -rn | head -1 | awk '{print $1}' | xargs kubectl scale deployments --replicas=0
+k get deploy
