@@ -9,7 +9,7 @@ import java.util.Set;
 public class HappyNumber {
 
     public static void main(String[] args) {
-        int n = 2;
+        int n = 19;
         System.out.format("\n" + n + " is happy: " + isHappy(n));
     }
     static boolean isHappy(int n) {

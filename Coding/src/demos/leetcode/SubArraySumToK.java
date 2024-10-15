@@ -6,13 +6,14 @@ import java.util.Map;
 public class SubArraySumToK {
     public int subarraySum(int[] nums, int k) {
         int total = 0;
-        int[] sums = new int[nums.length];
+        int[] sums = new int[nums.length];  // Cumulative sum
         sums[0] = nums[0];
         for (int i=1;i<sums.length;i++) sums[i] += sums[i-1] + nums[i];
+        // Check subarray (i, j)
         for (int i=0;i<nums.length;i++) {
             for (int j=i;j<nums.length;j++) {
                 if (sums[j]==k) total++;
-                sums[j] -= nums[i];
+                sums[j] -= nums[i];         // take nums[i] out of subarray
             }
         }
         return total;
@@ -43,6 +44,7 @@ public class SubArraySumToK {
         int[] nums = {1,2,3,-2,4,5};
         int k = 5;
         SubArraySumToK subArraySumToK = new SubArraySumToK();
+        System.out.println(subArraySumToK.subarraySum(nums, k));
         System.out.println(subArraySumToK.subarraySum1(nums, k));
     }
 }

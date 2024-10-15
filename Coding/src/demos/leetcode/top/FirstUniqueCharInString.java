@@ -21,7 +21,7 @@ public class FirstUniqueCharInString {
         return -1;
     }
 
-    // Use array for counts
+    // Use array for counts assuming the string has only letters
     public int firstUniqChar2(String s) {
         char[] arr = s.toCharArray();
         int[] counts = new int[26];

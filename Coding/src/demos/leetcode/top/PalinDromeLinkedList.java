@@ -39,4 +39,8 @@ public class PalinDromeLinkedList {
         return count;
     }
 
+    /* Alternative: maintain two pointers, p1 = head, p2=head.next
+    p1 advances by 1 while p2 advances by 2. Pust p1.val to stack until p2 is null.
+    compare stack and p1.
+     */
 }

@@ -3,6 +3,7 @@ package demos.stream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamReduce {
@@ -27,8 +28,10 @@ public class StreamReduce {
         System.out.print("Reduce to string parallel: ");
         System.out.println(fruits.parallelStream().reduce("", (a,b)->a+String.join(",",b)+";", (x,y)->x + y));  // combiner is needed for parallel
 
-        System.out.print("Flatmap: ");
+        System.out.print("Flatmap then reduce: ");
         System.out.println(fruits.stream().flatMap(li-> Stream.of(li.toArray(new String[0]))).reduce("", (a,b)->a+b+","));
+        System.out.print("Flatmap then join: ");
+        System.out.println(fruits.stream().flatMap(li-> Stream.of(li.toArray(new String[0]))).collect(Collectors.joining(",")));
 
         List<String> list = fruits.stream().reduce(new ArrayList<>(), (a,b)->{a.addAll(b);return a;});
         System.out.print("Reduce to List<>...1: ");

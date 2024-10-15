@@ -1,3 +1,7 @@
+/*
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
+ */
+
 package demos.leetcode.jp;
 
 public class BestTimeToBuySellStop {
@@ -9,8 +13,9 @@ public class BestTimeToBuySellStop {
         int minPx = prices[0];
 
         for (int i=1;i<len;i++) {
-            if (minPx > prices[i]) minPx = prices[i];
-            else {
+            if (minPx > prices[i]) {
+                minPx = prices[i];
+            } else {
                 int p = prices[i]-minPx;
                 profit = profit > p ? profit : p;
             }

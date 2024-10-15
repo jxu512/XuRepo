@@ -21,9 +21,12 @@ public class CountingBits {
 
     // dp
     public int[] countBits1(int n) {
-        int[] ans = new int[n + 1];
-        for (int i = 1; i <= n; i++) {
-            ans[i] = ans[i >> 1] + (i & 1);
+        int[] ans = new int[n+1];
+        ans[0] = 0;
+        if (n==0) return ans;
+
+        for (int i=1;i<=n;i++) {
+            ans[i] = ans[i>>1] + (i&1);
         }
         return ans;
     }

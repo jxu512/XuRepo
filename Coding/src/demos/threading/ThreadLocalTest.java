@@ -22,7 +22,7 @@ class ARunnable implements Runnable{
     }
     @Override
     public void run() {
-        service.getThreadLocal().set(Thread.currentThread().getName());
+        service.setThreadName();
         service.service();
     }
 }
@@ -30,8 +30,11 @@ class ARunnable implements Runnable{
 class Service {
     private ThreadLocal<String> executingThread = new ThreadLocal<>();  // Thread specific value
     private int seedInstance;       // Instance variable has value from last update
-    public ThreadLocal<String> getThreadLocal() {
-        return executingThread;
+    public void setThreadName() {
+        executingThread.set(Thread.currentThread().getName());
+    }
+    public String getThreadName() {
+        return executingThread.get();
     }
     public void setSeedInstance(int seed) {
         this.seedInstance = seed;
