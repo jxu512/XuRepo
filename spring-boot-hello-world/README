@@ -1,0 +1,15 @@
+In project root folder
+manifest.yml: cf manifest
+
+cf8 api
+API endpoint:   https://api.cf.us10-001.hana.ondemand.com
+API version:    3.181.0
+
+
+1. mvn8 package
+2. cf8 push
+  routes:              hello-bogus-swan-bu.cfapps.us10-001.hana.ondemand.com
+3. access in browser: https://hello-bogus-swan-bu.cfapps.us10-001.hana.ondemand.com/hello?name=Frank
+
+To do:
+Use higher Java version 11/17

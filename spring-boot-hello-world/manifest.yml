@@ -1,0 +1,9 @@
+---
+applications:
+  - name: hello
+    memory: 1024M
+    instances: 1
+    path: target\spring-boot-0.0.1-SNAPSHOT.jar
+    random-route: true
+    env:
+      JAVA_OPTS: '-Xmx1g'
